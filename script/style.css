@@ -1,0 +1,109 @@
+/* ==========================================================
+   OLYMPUS OVERS — ESTILOS PERSONALIZADOS (unificado)
+   Reemplaza los <style> sueltos que estaban repetidos/distintos
+   en cada página (index, catalogo, contacto, nosotros).
+   ========================================================== */
+
+html { scroll-behavior: smooth; }
+
+/* ---------- Efecto Grain Overlay (usado en todas las páginas) ---------- */
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 1000;
+    opacity: 0.35;
+}
+
+/* ---------- Ocultar scrollbars pero permitir scroll ---------- */
+.hide-scroll::-webkit-scrollbar,
+.custom-scrollbar::-webkit-scrollbar { display: none; }
+.hide-scroll,
+.custom-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* ---------- Rayos de calificación (usado en reseñas: nosotros / catálogo) ---------- */
+.rayo-activo {
+    color: var(--olympus-dorado, #E5AA2D);
+    filter: drop-shadow(0px 0px 4px rgba(229, 170, 45, 0.8));
+}
+.rayo-inactivo {
+    color: #333333;
+}
+
+/* ---------- Acordeón de Preguntas Frecuentes (nosotros) ---------- */
+.faq-content {
+    transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+}
+.faq-content.open {
+    max-height: 300px;
+    opacity: 1;
+}
+.faq-icon { transition: transform 0.3s ease; }
+.faq-icon.open { transform: rotate(180deg); }
+
+/* ---------- Modal de producto "inyectado" (index / catálogo) ---------- */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 50;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+.modal-overlay.active { display: flex; }
+.modal {
+    background: #1D1712; /* olympus-card */
+    width: 100%;
+    max-width: 400px;
+    border-radius: 1rem;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid #0A3767; /* olympus-azul-zeus */
+}
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.modal-close { color: white; background: none; border: none; font-size: 1.2rem; cursor: pointer; }
+.modal-body { padding: 1.5rem; }
+.modal-wa-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background: #25D366;
+    color: white;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 1rem;
+}
+.wa-icon { width: 20px; height: 20px; fill: currentColor; }
+
+/* ==========================================================
+   TIPOGRAFÍA — Escala oficial de la guía de marca
+   Úsalas como clases utilitarias adicionales, ej:
+   <h1 class="font-display text-h1">Título</h1>
+   ========================================================== */
+.text-h1 { font-size: 36px; line-height: 1.1; }
+.text-h2 { font-size: 30px; line-height: 1.15; }
+.text-h3 { font-size: 22px; line-height: 1.2; }
+@media (min-width: 768px) {
+    .text-h1 { font-size: 56px; }
+    .text-h2 { font-size: 40px; }
+    .text-h3 { font-size: 28px; }
+}
+.text-subtitulo { font-size: 20px; font-family: 'Montserrat', sans-serif; font-weight: 500; }
+.text-cuerpo     { font-size: 16px; font-family: 'Montserrat', sans-serif; font-weight: 400; }
+.text-pequeno    { font-size: 14px; font-family: 'Montserrat', sans-serif; font-weight: 400; }
+.text-especial   { font-family: 'Cinzel', serif; }

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olympus Overs | Catálogo</title>
+    
+    <!-- Fuentes de marca: League Spartan, Montserrat, Cinzel -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=League+Spartan:wght@500;600;700&family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS por CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="/script/theme.js"></script>
+
+    <!-- Estilos Personalizados -->
+    <link rel="stylesheet" href="/script/style.css">
+</head>
+<body class="bg-olympus-black text-olympus-white font-sans antialiased overflow-x-hidden pt-6">
+
+    <div id="navbar-container"></div>
+    <script src="/script/navbar.js"></script>
+
+    <main class="w-full max-w-md mx-auto md:max-w-3xl lg:max-w-5xl px-4 pb-12 space-y-8 relative z-10">
+
+        <!-- 1. VIDEO DESTACADO -->
+        <section aria-label="Video Promocional">
+            <div class="w-full aspect-video rounded-3xl overflow-hidden border border-gray-800 shadow-[0_0_15px_rgba(201,168,76,0.1)] relative bg-olympus-card">
+                <iframe class="absolute inset-0 w-full h-full" src="https://www.youtube.com/embed/F1B9Fk_SgI0?autoplay=1&mute=1&loop=1&playlist=F1B9Fk_SgI0&controls=0" title="Olympus Overs Colección" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <!-- 2. SISTEMA DE FILTROS -->
+        <section aria-label="Filtros de Catálogo" class="space-y-4">
+            
+            <!-- Filtro Género -->
+            <div class="flex overflow-x-auto hide-scroll gap-3 pb-2 snap-x" id="filter-gender">
+                <button data-filter="todo" class="filter-btn gender-btn snap-start shrink-0 px-5 py-2 rounded-full border border-olympus-gold bg-olympus-gold text-olympus-black font-medium text-sm transition-colors">Todo</button>
+                <button data-filter="hombre" class="filter-btn gender-btn snap-start shrink-0 px-5 py-2 rounded-full border border-gray-700 bg-olympus-card text-gray-300 hover:border-olympus-white text-sm transition-colors">Hombre</button>
+                <button data-filter="mujer" class="filter-btn gender-btn snap-start shrink-0 px-5 py-2 rounded-full border border-gray-700 bg-olympus-card text-gray-300 hover:border-olympus-white text-sm transition-colors">Mujer</button>
+                <button data-filter="unisex" class="filter-btn gender-btn snap-start shrink-0 px-5 py-2 rounded-full border border-gray-700 bg-olympus-card text-gray-300 hover:border-olympus-white text-sm transition-colors">Unisex</button>
+            </div>
+            
+            <!-- Filtro Categoría -->
+            <div class="flex overflow-x-auto hide-scroll gap-3 pb-2 snap-x" id="filter-category">
+                <button data-filter="todo" class="filter-btn cat-btn snap-start shrink-0 px-4 py-1.5 rounded-lg border border-olympus-blue/50 bg-olympus-blue/10 text-olympus-blue font-medium text-xs transition-colors">Todo</button>
+                <button data-filter="chamarra" class="filter-btn cat-btn snap-start shrink-0 px-4 py-1.5 rounded-lg border border-gray-800 bg-olympus-card text-gray-400 hover:text-white text-xs transition-colors">Chamarra</button>
+                <button data-filter="pans" class="filter-btn cat-btn snap-start shrink-0 px-4 py-1.5 rounded-lg border border-gray-800 bg-olympus-card text-gray-400 hover:text-white text-xs transition-colors">Pans</button>
+                <button data-filter="shorts" class="filter-btn cat-btn snap-start shrink-0 px-4 py-1.5 rounded-lg border border-gray-800 bg-olympus-card text-gray-400 hover:text-white text-xs transition-colors">Shorts</button>
+                <button data-filter="boxfit" class="filter-btn cat-btn snap-start shrink-0 px-4 py-1.5 rounded-lg border border-gray-800 bg-olympus-card text-gray-400 hover:text-white text-xs transition-colors">BoxFit</button>
+                <button data-filter="otro" class="filter-btn cat-btn snap-start shrink-0 px-4 py-1.5 rounded-lg border border-gray-800 bg-olympus-card text-gray-400 hover:text-white text-xs transition-colors">Otro</button>
+            </div>
+        </section>
+
+        <!-- 3. PRODUCTOS -->
+        <section aria-labelledby="products-title">
+            <div class="flex items-center justify-between mb-6">
+                <h2 id="products-title" class="font-display text-4xl tracking-wide text-olympus-white">PRODUCTOS</h2>
+                <span id="product-count" class="text-xs text-gray-500 font-medium">10 Artículos</span>
+            </div>
+
+            <!-- GRID DINÁMICO (El "content-start" evita que se estiren verticalmente si hay pocos) -->
+            <div id="product-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 relative min-h-[300px] content-start">
+                <!-- Javascript inyectará los productos aquí -->
+            </div>
+            
+            <div id="no-results" class="hidden text-center py-10 text-gray-500">
+                <p>No se encontraron productos con estos filtros.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- =========================
+         MODAL / BOTTOM SHEET
+    ========================== -->
+    <div id="modal-overlay" class="fixed inset-0 bg-black/70 z-40 hidden opacity-0 transition-opacity duration-300 backdrop-blur-sm" onclick="closeModal()"></div>
+    
+    <div id="bottom-sheet" class="fixed bottom-0 left-1/2 transform -translate-x-1/2 w-full max-w-md bg-olympus-card z-50 rounded-t-3xl border-t border-gray-800 transition-transform duration-300 translate-y-full flex flex-col max-h-[90vh] shadow-[0_-10px_40px_rgba(0,0,0,0.5)]">
+        <div class="w-12 h-1.5 bg-gray-600 rounded-full mx-auto mt-4 mb-2"></div>
+        <button onclick="closeModal()" class="absolute top-4 right-5 text-gray-400 hover:text-white text-xl">✕</button>
+
+        <div class="overflow-y-auto px-5 pb-8 custom-scrollbar relative z-10">
+            <img id="m-img" src="" class="w-full h-64 object-cover rounded-2xl mb-4 border border-gray-800">
+            <h3 id="m-title" class="text-3xl font-display text-white mb-1">Nombre</h3>
+            <p id="m-price" class="text-2xl text-olympus-gold font-bold mb-4">$0 MXN</p>
+            <p id="m-desc" class="text-sm text-gray-400 mb-6 leading-relaxed">Descripción</p>
+
+            <!-- Tallas -->
+            <p class="text-sm font-bold mb-3 uppercase tracking-widest text-gray-300">Selecciona Talla</p>
+            <div class="flex gap-3 mb-6" id="size-selector">
+                <button class="size-btn flex-1 border border-gray-600 py-2 rounded-xl text-sm font-medium hover:border-olympus-gold transition-colors text-white" onclick="selectSize(this)">S</button>
+                <button class="size-btn flex-1 border border-gray-600 py-2 rounded-xl text-sm font-medium hover:border-olympus-gold transition-colors text-white" onclick="selectSize(this)">M</button>
+                <button class="size-btn flex-1 border border-gray-600 py-2 rounded-xl text-sm font-medium hover:border-olympus-gold transition-colors text-white" onclick="selectSize(this)">L</button>
+                <button class="size-btn flex-1 border border-gray-600 py-2 rounded-xl text-sm font-medium hover:border-olympus-gold transition-colors text-white" onclick="selectSize(this)">XL</button>
+            </div>
+
+            <!-- Colores -->
+            <p class="text-sm font-bold mb-3 uppercase tracking-widest text-gray-300">Color</p>
+            <div class="flex gap-4 mb-8" id="color-selector">
+                <button class="color-btn w-10 h-10 rounded-full bg-black border-2 border-gray-500 ring-2 ring-transparent transition-all" data-color="Negro" onclick="selectColor(this)"></button>
+                <button class="color-btn w-10 h-10 rounded-full bg-white border-2 border-gray-300 ring-2 ring-transparent transition-all" data-color="Blanco" onclick="selectColor(this)"></button>
+                <button class="color-btn w-10 h-10 rounded-full bg-[#4F83CC] border-2 border-olympus-blue ring-2 ring-transparent transition-all" data-color="Azul Trueno" onclick="selectColor(this)"></button>
+            </div>
+
+            <!-- Botón WhatsApp -->
+            <a id="m-wa-btn" href="#" target="_blank" class="w-full bg-[#25D366] text-white font-bold py-4 rounded-xl flex items-center justify-center gap-2 hover:bg-[#20b858] transition-colors shadow-lg shadow-[#25D366]/20">
+                <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                Pedir por WhatsApp
+            </a>
+        </div>
+    </div>
+
+    <script src="/script/catalogo.js"></script>
+
+     <!-- Contenedor vacío donde el JavaScript pintará el footer -->
+    <div id="footer-container"></div>
+    
+    <!-- Llama al archivo JS que acabas de crear -->
+    <script src="/script/footer.js"></script>
+
+</body>
+</html>
