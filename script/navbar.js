@@ -199,10 +199,10 @@ const navbarHTML = `
 
 <!-- NAVBAR ORIGINAL -->
 <nav id="olympus-navbar">
-    <a href="../index.html" id="nav-inicio" class="nav-link">Inicio</a>
-    <a href="../catalogo.html" id="nav-catalogo" class="nav-link">Catálogo</a>
-    <a href="../nosotros.html" id="nav-nosotros" class="nav-link">Nosotros</a>
-    <a href="../contacto.html" id="nav-contacto" class="nav-link">Contacto</a>
+    <a href="index.html" id="nav-inicio" class="nav-link">Inicio</a>
+    <a href="catalogo.html" id="nav-catalogo" class="nav-link">Catálogo</a>
+    <a href="nosotros.html" id="nav-nosotros" class="nav-link">Nosotros</a>
+    <a href="contacto.html" id="nav-contacto" class="nav-link">Contacto</a>    
 </nav>
 `;
 

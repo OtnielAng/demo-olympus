@@ -3,7 +3,7 @@
 // ==========================================
 
 // Nota: estas líneas usan document.write, tal como en el original.
-// Solo funcionan bien porque el <script src="/script/index.js">
+// Solo funcionan bien porque el <script src="script/index.js">
 // se ejecuta durante el parseo del HTML, en el mismo lugar donde
 // estaba el <script> inline. No lo cambies de posición en el body.
 
