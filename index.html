@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Olympus Overs | Inicio</title>
-    
+
     <!-- Fuentes de marca: League Spartan, Montserrat, Cinzel -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=League+Spartan:wght@500;600;700&family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:ital,wght@0,400;0,600;0,700;1,400&family=League+Spartan:wght@500;600;700;800;900&family=Montserrat:wght@400;500;700&display=swap"
+        rel="stylesheet">
 
     <!-- Tailwind CSS por CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -16,43 +19,69 @@
 
     <!-- Estilos Personalizados -->
     <link rel="stylesheet" href="script/style.css">
+
 </head>
+
 <body class="bg-olympus-black text-olympus-white font-sans antialiased overflow-x-hidden">
 
     <div id="navbar-container"></div>
     <script src="script/navbar.js"></script>
-    
-    <main class="w-full max-w-md mx-auto md:max-w-3xl lg:max-w-5xl px-4 py-8 space-y-12" >
+
+    <main class="w-full max-w-md mx-auto md:max-w-3xl lg:max-w-5xl px-5 py-10 space-y-20 md:space-y-28">
 
         <!-- =========================
-             1. HERO SECTION
+             1. HERO SECTION (Texto Inferior)
         ========================== -->
-        <section aria-label="Inicio" class="relative flex flex-col items-center text-center pt-4 pb-8" ">
+        <section aria-label="Inicio"
+            class="relative w-full h-[600px] md:h-[800px] flex items-end pb-16 overflow-hidden">
 
-            <div class="w-full aspect-video rounded-3xl overflow-hidden bg-olympus-card relative">
-                <!-- Usamos una imagen de una tienda/ropa urbana para ilustrar -->
-                <img src="https://images.unsplash.com/photo" alt="Olympus Overs Tienda" class="w-full h-full object-cover">
-                <!-- Un sutil degradado encima para oscurecer la foto -->
-                <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+            <!-- IMAGEN DE FONDO -->
+            <img src="img/descarga.jpg" alt="Fondo Colección Zeus"
+                class="absolute inset-0 w-full h-full object-cover z-0">
+
+            <!-- DEGRADADO INFERIOR -->
+            <div class="absolute inset-0 bg-gradient-to-t from-olympus-negro via-olympus-negro/40 to-transparent z-0">
             </div>
 
-            <!-- Eslogan -->
-             <span class="text-olympus-gold" style="color: #0A3767;">NUEVO DORP</span>
-            <h1 class="text-2xl md:text-4xl font-black uppercase tracking-widest mb-6 z-10">
-                NACISTE PARA TRASCENDER
-            </h1>
-            
-            <div class="relative w-full h-[65vh] flex justify-center items-end">
-                <!-- Imagen del Modelo sin fondo -->
-                <!-- [IMG_REPLACE: Modelo Olympus sin fondo (PNG transparente)] -->
-                <img src="https://i.pinimg.com/12" alt="Modelo vistiendo Olympus Overs" class="h-full object-cover z-0">
-                
-                <!-- Div superpuesto a la mitad con Logo y Nombre -->
-                <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-olympus-black/60 backdrop-blur-md border border-olympus-gold/50 rounded-2xl p-6 shadow-[0_0_20px_rgba(79,131,204,0.3)] z-10 w-4/5 flex flex-col items-center">
-                    <!-- [IMG_REPLACE: Logo Olympus Overs (SVG)] -->
-                    <div class="w-16 h-16 bg-gray-700 rounded-full mb-3 flex items-center justify-center text-xs">LOGO</div>
-                    <h2 class="text-xl md:text-3xl font-bold tracking-[0.2em] text-olympus-white">OLYMPUS</h2>
-                    <h2 class="text-xl md:text-3xl font-light tracking-[0.3em] text-olympus-blue">OVERS</h2>
+            <!-- DEGRADADOS LATERALES -->
+            <div
+                class="absolute inset-y-0 left-0 w-24 md:w-64 bg-gradient-to-r from-olympus-negro to-transparent z-0 pointer-events-none">
+            </div>
+            <div
+                class="absolute inset-y-0 right-0 w-24 md:w-64 bg-gradient-to-l from-olympus-negro to-transparent z-0 pointer-events-none">
+            </div>
+
+            <!-- CONTENIDO ALINEADO A LA PARTE INFERIOR -->
+            <div class="relative z-10 w-full max-w-5xl mx-auto px-6 md:px-10 flex flex-col items-start justify-end">
+
+                <!-- Eyebrow: Usando Cinzel (font-special) y Glow -->
+                <span class="font-special text-sm font-bold tracking-[0.2em] uppercase mb-3 glow-azul">Nuevo Drop
+                    Zeus</span>
+
+                <!-- Headline grande: Usando League Spartan (font-display) -->
+                <h1
+                    class="font-display font-black uppercase text-olympus-white text-[45px] md:text-[85px] leading-[0.9] max-w-xl mb-6">
+                    NACISTE PARA TRASCENDER
+                </h1>
+
+                <!-- Subheadline: Usando Montserrat (font-sans) -->
+                <p class="font-sans text-olympus-gris text-sm md:text-base max-w-xs mb-8">
+                    Más que ropa. Una mentalidad.
+                    Diseñada para quienes construyen su legado.
+                </p>
+
+                <!-- CTA Botones (SIN AZUL) -->
+                <div class="flex gap-4">
+                    <!-- Botón Principal Dorado -->
+                    <a href="catalogo.html"
+                        class="bg-olympus-dorado text-olympus-negro font-bold uppercase text-xs tracking-[0.1em] px-8 py-3 rounded-sm hover:opacity-90 transition-opacity">
+                        Ver colección
+                    </a>
+                    <!-- Botón Secundario Transparente c/ Borde Blanco -->
+                    <a href="nosotros.html"
+                        class="border border-olympus-white/30 text-white font-bold uppercase text-xs tracking-[0.1em] px-8 py-3 rounded-sm hover:bg-white/10 transition-all">
+                        Conoce más
+                    </a>
                 </div>
             </div>
         </section>
@@ -61,143 +90,130 @@
              2. TARJETA NUEVA COLECCIÓN
         ========================== -->
         <section aria-label="Nueva Colección">
-            <article class="relative w-full h-[400px] rounded-3xl overflow-hidden shadow-lg border border-gray-800">
-                <!-- Imagen de fondo de la colección -->
-                <!-- [IMG_REPLACE: Foto lifestyle de la nueva colección] -->
-                <img src="https://via.placeholder.com/600x400/222/fff?text=Fondo+Nueva+Coleccion" alt="Nueva Colección Olympus" class="absolute inset-0 w-full h-full object-cover">
-                
-                <!-- Gradiente para que el texto resalte -->
-                <div class="absolute inset-0 bg-gradient-to-t from-olympus-black via-olympus-black/40 to-transparent"></div>
-                
-                <!-- Contenido inferior izquierdo -->
-                <div class="absolute bottom-0 left-0 p-6 w-full">
-                    <h3 class="text-3xl font-bold text-olympus-gold mb-2 uppercase">Nueva Colección</h3>
-                    <p class="text-sm text-gray-300 mb-4 line-clamp-2">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.
+            <article class="relative w-full h-[380px] rounded-3xl overflow-hidden card-border border-gray-800">
+                <img src="img/descarga.jpg" alt="Nueva Colección Olympus"
+                    class="absolute inset-0 w-full h-full object-cover">
+
+                <div class="absolute inset-0 bg-gradient-to-t from-olympus-black via-olympus-black/60 to-transparent">
+                </div>
+
+                <div class="absolute bottom-0 left-0 p-7 w-full">
+                    <span
+                        class="font-special text-olympus-dorado text-xs tracking-[0.2em] uppercase mb-2 block">Colección</span>
+                    <h3 class="font-display text-olympus-white font-bold uppercase tracking-wide text-3xl mb-3">Nueva
+                        Colección</h3>
+                    <p class="font-sans text-sm text-olympus-white/80 mb-5 line-clamp-2 max-w-sm">
+                        La fuerza de los dioses tejida en prendas pesadas de corte oversize.
                     </p>
-                    <a href="#productos" class="inline-block bg-olympus-white text-olympus-black font-bold uppercase text-xs px-6 py-3 rounded-full hover:bg-olympus-gold transition-colors">
-                        Ver Ahora
+                    <a href="#productos"
+                        class="inline-block bg-olympus-dorado text-olympus-negro font-bold uppercase text-xs tracking-[0.1em] px-8 py-3 rounded-sm hover:opacity-90 transition-opacity">
+                        Ver ahora
                     </a>
                 </div>
             </article>
         </section>
 
         <!-- =========================
-             3. INSPÍRATE EN LOS LOOKS (Carrusel)
+             3. INSPÍRATE EN LOS LOOKS
         ========================== -->
-        <section aria-labelledby="looks-title" class="space-y-4">
-            <h3 id="looks-title" class="text-xl font-bold uppercase tracking-wider pl-2 border-l-4 border-olympus-blue">Inspírate en los looks</h3>
-            
-            <!-- Contenedor Carrusel Horizontal -->
-            <div class="flex overflow-x-auto hide-scroll snap-x snap-mandatory gap-4 pb-4">
+        <section aria-labelledby="looks-title">
+            <div class="mb-6">
+                <h3 id="looks-title" class="font-display text-olympus-white font-bold uppercase tracking-wide text-2xl">
+                    Inspírate en los looks</h3>
+                <div class="divider-coin mt-3"><span class="coin"></span></div>
+            </div>
+
+            <!-- Modificamos el contenedor: 
+                 En móvil sigue siendo un flex con scroll horizontal (snap).
+                 En 'md' (tablets) y 'lg' (computadoras) cambia a un grid de 3 columnas para usar el espacio. -->
+            <div class="flex md:grid md:grid-cols-3 overflow-x-auto md:overflow-visible hide-scroll snap-x snap-mandatory gap-4 md:gap-6 pb-2">
                 
                 <!-- Tarjeta Look 1 -->
-                <article class="relative snap-center shrink-0 w-[240px] h-[360px] rounded-2xl overflow-hidden bg-olympus-dark border border-gray-800 flex flex-col justify-end">
-                    <!-- [IMG_REPLACE: Foto del Look completo vertical] -->
-                    <img src="https://via.placeholder.com/240x360/333/fff?text=Look+1" class="absolute inset-0 w-full h-full object-cover z-0" alt="Look inspiracional 1">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent z-0"></div>
+                <!-- Cambiamos 'w-[220px]' por 'w-[75vw] md:w-full' para que sea flexible -->
+                <article
+                    class="relative snap-center shrink-0 w-[75vw] md:w-full h-[320px] md:h-[400px] lg:h-[450px] rounded-2xl overflow-hidden bg-olympus-dark card-border flex flex-col justify-end">
+                    <img src="img/descarga.jpg" class="absolute inset-0 w-full h-full object-cover z-0" alt="Look 1">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent z-0"></div>
                     <div class="relative z-10 p-4 w-full">
-                        <p class="text-sm font-bold text-white mb-3">Lorem Look #1</p>
-                        <!-- Este botón llevaría a la otra página que mencionas -->
-                        <button class="w-full bg-olympus-blue text-white font-bold py-2 rounded-lg text-sm uppercase">Comprar Look</button>
+                        <p class="font-special text-sm font-bold text-olympus-dorado mb-3">Zeus Fit #1</p>
+                        <!-- Botón Blanco (Sin azul) -->
+                        <button
+                            class="w-full bg-olympus-white text-olympus-negro font-bold uppercase text-xs tracking-[0.1em] py-3 rounded-sm hover:opacity-90 transition-opacity">
+                            Comprar look
+                        </button>
                     </div>
                 </article>
 
                 <!-- Tarjeta Look 2 -->
-                <article class="relative snap-center shrink-0 w-[240px] h-[360px] rounded-2xl overflow-hidden bg-olympus-dark border border-gray-800 flex flex-col justify-end">
-                    <!-- [IMG_REPLACE: Foto del Look completo vertical] -->
-                    <img src="https://via.placeholder.com/240x360/333/fff?text=Look+2" class="absolute inset-0 w-full h-full object-cover z-0" alt="Look inspiracional 2">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent z-0"></div>
+                <article
+                    class="relative snap-center shrink-0 w-[75vw] md:w-full h-[320px] md:h-[400px] lg:h-[450px] rounded-2xl overflow-hidden bg-olympus-dark card-border flex flex-col justify-end">
+                    <img src="img/descarga.jpg" class="absolute inset-0 w-full h-full object-cover z-0" alt="Look 2">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent z-0"></div>
                     <div class="relative z-10 p-4 w-full">
-                        <p class="text-sm font-bold text-white mb-3">Lorem Look #2</p>
-                        <button class="w-full bg-olympus-blue text-white font-bold py-2 rounded-lg text-sm uppercase">Comprar Look</button>
+                        <p class="font-special text-sm font-bold text-olympus-dorado mb-3">Zeus Fit #2</p>
+                        <button
+                            class="w-full bg-olympus-white text-olympus-negro font-bold uppercase text-xs tracking-[0.1em] py-3 rounded-sm hover:opacity-90 transition-opacity">
+                            Comprar look
+                        </button>
                     </div>
                 </article>
 
                 <!-- Tarjeta Look 3 -->
-                <article class="relative snap-center shrink-0 w-[240px] h-[360px] rounded-2xl overflow-hidden bg-olympus-dark border border-gray-800 flex flex-col justify-end">
-                    <!-- [IMG_REPLACE: Foto del Look completo vertical] -->
-                    <img src="https://via.placeholder.com/240x360/333/fff?text=Look+3" class="absolute inset-0 w-full h-full object-cover z-0" alt="Look inspiracional 3">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent z-0"></div>
+                <article
+                    class="relative snap-center shrink-0 w-[75vw] md:w-full h-[320px] md:h-[400px] lg:h-[450px] rounded-2xl overflow-hidden bg-olympus-dark card-border flex flex-col justify-end">
+                    <img src="img/descarga.jpg" class="absolute inset-0 w-full h-full object-cover z-0" alt="Look 3">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent z-0"></div>
                     <div class="relative z-10 p-4 w-full">
-                        <p class="text-sm font-bold text-white mb-3">Lorem Look #3</p>
-                        <button class="w-full bg-olympus-blue text-white font-bold py-2 rounded-lg text-sm uppercase">Comprar Look</button>
+                        <p class="font-special text-sm font-bold text-olympus-dorado mb-3">Zeus Fit #3</p>
+                        <button
+                            class="w-full bg-olympus-white text-olympus-negro font-bold uppercase text-xs tracking-[0.1em] py-3 rounded-sm hover:opacity-90 transition-opacity">
+                            Comprar look
+                        </button>
                     </div>
                 </article>
-
             </div>
         </section>
 
         <!-- =========================
              4. CATÁLOGO PREVIEW
         ========================== -->
-        <section aria-labelledby="catalog-title" class="space-y-4">
-            <h3 id="catalog-title" class="text-xl font-bold uppercase tracking-wider pl-2 border-l-4 border-olympus-gold">Catálogo</h3>
-            
-            <!-- Grid de 4 productos -->
-            <div class="grid grid-cols-2 gap-4">
-                
-                <!-- Producto 1 (Al dar clic puede abrir tu Modal) -->
-                <article class="bg-olympus-dark rounded-2xl p-3 border border-gray-800 cursor-pointer" onclick="document.getElementById('modal-overlay').classList.add('active')">
-                    <!-- [IMG_REPLACE: Prenda 1 (Cuadrada)] -->
-                    <div class="aspect-square bg-gray-800 rounded-xl mb-3 overflow-hidden">
-                        <img src="https://via.placeholder.com/200?text=Prenda+1" alt="Producto 1" class="w-full h-full object-cover">
-                    </div>
-                    <p class="text-xs text-olympus-blue uppercase font-bold mb-1">Categoría</p>
-                    <h4 class="text-sm font-semibold text-white truncate">Lorem Ipsum Shirt</h4>
-                    <p class="text-olympus-gold font-bold mt-1">$499 MXN</p>
-                </article>
 
-                <!-- Producto 2 -->
-                <article class="bg-olympus-dark rounded-2xl p-3 border border-gray-800">
-                    <div class="aspect-square bg-gray-800 rounded-xl mb-3 overflow-hidden">
-                        <img src="https://via.placeholder.com/200?text=Prenda+2" alt="Producto 2" class="w-full h-full object-cover">
-                    </div>
-                    <p class="text-xs text-olympus-blue uppercase font-bold mb-1">Categoría</p>
-                    <h4 class="text-sm font-semibold text-white truncate">Dolor Sit Hoodie</h4>
-                    <p class="text-olympus-gold font-bold mt-1">$899 MXN</p>
-                </article>
-                
-                <!-- Producto 3 -->
-                <article class="bg-olympus-dark rounded-2xl p-3 border border-gray-800">
-                    <div class="aspect-square bg-gray-800 rounded-xl mb-3 overflow-hidden">
-                        <img src="https://via.placeholder.com/200?text=Prenda+3" alt="Producto 3" class="w-full h-full object-cover">
-                    </div>
-                    <p class="text-xs text-olympus-blue uppercase font-bold mb-1">Categoría</p>
-                    <h4 class="text-sm font-semibold text-white truncate">Amet Consectetur</h4>
-                    <p class="text-olympus-gold font-bold mt-1">$350 MXN</p>
-                </article>
-
-                <!-- Producto 4 -->
-                <article class="bg-olympus-dark rounded-2xl p-3 border border-gray-800">
-                    <div class="aspect-square bg-gray-800 rounded-xl mb-3 overflow-hidden">
-                        <img src="https://via.placeholder.com/200?text=Prenda+4" alt="Producto 4" class="w-full h-full object-cover">
-                    </div>
-                    <p class="text-xs text-olympus-blue uppercase font-bold mb-1">Categoría</p>
-                    <h4 class="text-sm font-semibold text-white truncate">Elit Sed Do</h4>
-                    <p class="text-olympus-gold font-bold mt-1">$550 MXN</p>
-                </article>
-
+        <section aria-labelledby="catalog-title">
+            <div class="mb-6">
+                <h3 id="catalog-title"
+                    class="font-display text-olympus-white font-bold uppercase tracking-wide text-2xl">Catálogo</h3>
+                <div class="divider-coin mt-3"><span class="coin"></span></div>
             </div>
 
-            <!-- Botón Ver Más -->
-            <div class="text-center pt-4">
-                <button class="bg-transparent border border-olympus-white text-olympus-white px-8 py-3 rounded-full font-bold uppercase text-xs hover:bg-olympus-white hover:text-olympus-black transition-colors w-full md:w-auto">
+            <!-- Aquí inyectaremos los 3 productos -->
+            <div id="index-product-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 relative min-h-[300px] content-start">
+                <!-- El JS llenará esto -->
+            </div>
+
+            <div class="text-center pt-8">
+                <a href="catalogo.html"
+                    class="inline-block bg-transparent border border-olympus-white/30 text-olympus-white font-bold uppercase text-xs tracking-[0.1em] px-8 py-3 rounded-sm hover:bg-white/10 transition-all w-full md:w-auto">
                     Ver todo el catálogo
-                </button>
+                </a>
             </div>
         </section>
-
+        
         <!-- =========================
              5. NOSOTROS (Tarjeta)
         ========================== -->
         <section aria-label="Nosotros">
-            <article class="bg-olympus-dark rounded-3xl p-6 md:p-8 border border-gray-800 text-center flex flex-col items-center">
-                <h3 class="text-2xl font-bold uppercase text-olympus-gold mb-4">Nosotros</h3>
-                <p class="text-sm text-gray-400 mb-6 leading-relaxed">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.
+            <article
+                class="bg-olympus-card border border-gray-800 rounded-3xl p-8 md:p-10 text-center flex flex-col items-center">
+                <span class="font-special text-olympus-dorado text-xs tracking-[0.2em] uppercase mb-4">Quiénes
+                    somos</span>
+                <h3 class="font-display text-olympus-white font-bold uppercase tracking-wide text-4xl mb-4">Nosotros
+                </h3>
+                <p class="font-sans text-sm text-olympus-gris mb-8 leading-relaxed max-w-sm">
+                    Forjados para aquellos que no se conforman. Nuestra misión es entregar cortes perfectos y materiales
+                    que soporten tu estilo de vida.
                 </p>
-                <button class="bg-olympus-blue text-white px-8 py-3 rounded-full font-bold uppercase text-xs w-full md:w-auto">
+                <button
+                    class="bg-olympus-dorado text-olympus-negro font-bold uppercase text-xs tracking-[0.1em] px-8 py-3 rounded-sm hover:opacity-90 transition-opacity w-full md:w-auto">
                     Ver más
                 </button>
             </article>
@@ -206,39 +222,38 @@
         <!-- =========================
              6. RESEÑAS
         ========================== -->
-        <section aria-labelledby="reviews-title" class="space-y-4">
-            <h3 id="reviews-title" class="text-xl font-bold uppercase tracking-wider pl-2 border-l-4 border-olympus-blue">Reseñas</h3>
-            
-            <div class="flex overflow-x-auto hide-scroll snap-x snap-mandatory gap-4 pb-4">
-                
+        <section aria-labelledby="reviews-title">
+            <div class="mb-6">
+                <h3 id="reviews-title"
+                    class="font-display text-olympus-white font-bold uppercase tracking-wide text-2xl">Reseñas</h3>
+                <div class="divider-coin mt-3"><span class="coin"></span></div>
+            </div>
+
+            <div class="flex overflow-x-auto hide-scroll snap-x snap-mandatory gap-4 pb-2">
                 <!-- Tarjeta Reseña 1 -->
-                <article class="snap-center shrink-0 w-[280px] bg-olympus-dark rounded-2xl p-5 border border-gray-800">
-                    <div class="flex gap-1 mb-3">
-                        <!-- 5 Rayos Azul Metálico (SVG) -->
-                        <script src="script/index.js"></script>
-                    </div>
-                    <p class="text-sm text-gray-300 italic mb-4">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Calidad increíble y diseño brutal."</p>
-                    <p class="text-xs font-bold text-olympus-white uppercase">- Usuario Uno</p>
+                <article class="snap-center shrink-0 w-[260px] bg-olympus-card rounded-2xl p-6 border border-gray-800">
+                    <div class="flex gap-1 mb-4 review-stars-container"></div>
+                    <p class="font-special text-sm text-olympus-white italic mb-5 leading-relaxed">"Calidad increíble y
+                        diseño brutal. Perfecta para entrenar."</p>
+                    <!-- Nombre con Glow -->
+                    <p class="font-sans text-[11px] font-bold uppercase tracking-wide glow-azul">— Usuario Uno</p>
                 </article>
 
                 <!-- Tarjeta Reseña 2 -->
-                <article class="snap-center shrink-0 w-[280px] bg-olympus-dark rounded-2xl p-5 border border-gray-800">
-                    <div class="flex gap-1 mb-3">
-                         <script src="script/index.js"></script>
-                    </div>
-                    <p class="text-sm text-gray-300 italic mb-4">"Sed do eiusmod tempor incididunt ut labore. El fit oversize es perfecto."</p>
-                    <p class="text-xs font-bold text-olympus-white uppercase">- Usuario Dos</p>
-                </article>
-                
-                 <!-- Tarjeta Reseña 3 -->
-                 <article class="snap-center shrink-0 w-[280px] bg-olympus-dark rounded-2xl p-5 border border-gray-800">
-                    <div class="flex gap-1 mb-3">
-                         <script src="script/index.js"></script>
-                    </div>
-                    <p class="text-sm text-gray-300 italic mb-4">"Ut enim ad minim veniam. Llegó rapidísimo y la tela es pesada, de 10."</p>
-                    <p class="text-xs font-bold text-olympus-white uppercase">- Usuario Tres</p>
+                <article class="snap-center shrink-0 w-[260px] bg-olympus-card rounded-2xl p-6 border border-gray-800">
+                    <div class="flex gap-1 mb-4 review-stars-container"></div>
+                    <p class="font-special text-sm text-olympus-white italic mb-5 leading-relaxed">"El fit oversize es
+                        perfecto. La tela pesa y se siente muy premium."</p>
+                    <p class="font-sans text-[11px] font-bold uppercase tracking-wide glow-azul">— Usuario Dos</p>
                 </article>
 
+                <!-- Tarjeta Reseña 3 -->
+                <article class="snap-center shrink-0 w-[260px] bg-olympus-card rounded-2xl p-6 border border-gray-800">
+                    <div class="flex gap-1 mb-4 review-stars-container"></div>
+                    <p class="font-special text-sm text-olympus-white italic mb-5 leading-relaxed">"Llegó rapidísimo y
+                        la atención al cliente de 10. Ya pedí otra."</p>
+                    <p class="font-sans text-[11px] font-bold uppercase tracking-wide glow-azul">— Usuario Tres</p>
+                </article>
             </div>
         </section>
 
@@ -246,22 +261,37 @@
              7. REDES SOCIALES
         ========================== -->
         <section aria-label="Redes Sociales">
-            <article class="bg-olympus-dark rounded-3xl p-8 border border-gray-800 flex flex-col items-center text-center">
-                <h3 class="text-xl font-bold uppercase mb-2">Síguenos en redes</h3>
-                <p class="text-olympus-blue font-bold text-lg mb-6">@olympus.overs</p>
-                
+            <article
+                class="bg-olympus-card border border-gray-800 rounded-3xl p-8 md:p-10 flex flex-col items-center text-center">
+                <span
+                    class="font-sans font-bold text-[10px] text-olympus-gris tracking-[0.2em] uppercase mb-3">Comunidad</span>
+                <h3 class="font-display text-olympus-white font-bold uppercase tracking-wide text-2xl mb-2">Síguenos en
+                    redes</h3>
+                <!-- Usuario con Glow -->
+                <p class="font-special text-lg mb-8 tracking-wide font-bold glow-azul">@olympus.overs</p>
+
                 <div class="flex gap-6 justify-center">
-                    <!-- Icono FB (SVG) -->
-                    <a href="#" aria-label="Facebook" class="text-gray-400 hover:text-olympus-gold transition-colors">
-                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/></svg>
+                    <a href="https://facebook.com/olympus.overs" aria-label="Facebook"
+                        class="text-olympus-gris hover:text-olympus-white transition-colors">
+
+                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" />
+                        </svg>
                     </a>
-                    <!-- Icono IG (SVG) -->
-                    <a href="#" aria-label="Instagram" class="text-gray-400 hover:text-olympus-gold transition-colors">
-                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                    <a href="https://instagram.com/olympus.overs" aria-label="Instagram"
+                        class="text-olympus-gris hover:text-olympus-white transition-colors">
+                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+                        </svg>
                     </a>
-                    <!-- Icono TikTok (SVG) -->
-                    <a href="#" aria-label="TikTok" class="text-gray-400 hover:text-olympus-gold transition-colors">
-                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 15.66a6.34 6.34 0 0010.86 4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"/></svg>
+                    <a href="https://tiktok.com/@olympus.overs" aria-label="TikTok"
+                        class="text-olympus-gris hover:text-olympus-white transition-colors">
+                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 15.66a6.34 6.34 0 0010.86 4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z" />
+                        </svg>
                     </a>
                 </div>
             </article>
@@ -269,46 +299,59 @@
 
     </main>
 
-    <!-- =========================
-         MODAL DEL CATÁLOGO (Tu HTML inyectado)
+<!-- =========================
+         MODAL / BOTTOM SHEET
     ========================== -->
-    <div class="modal-overlay" id="modal-overlay" onclick="closeModal(event)">
-      <div class="modal" id="modal" onclick="event.stopPropagation()">
-        <div class="modal-header">
-          <span style="font-size:9px;letter-spacing:2px;text-transform:uppercase;color:gray" id="modal-breadcrumb">Olympus Overs</span>
-          <button class="modal-close" onclick="closeModalDirect()">✕</button>
+    <div id="modal-overlay" class="fixed inset-0 bg-black/70 z-40 hidden opacity-0 transition-opacity duration-300 backdrop-blur-sm" onclick="closeModal()"></div>
+    
+    <div id="bottom-sheet" class="fixed bottom-0 left-1/2 transform -translate-x-1/2 w-full max-w-md bg-olympus-card z-50 rounded-t-3xl border-t border-gray-800 transition-transform duration-300 translate-y-full flex flex-col max-h-[90vh] shadow-[0_-10px_40px_rgba(0,0,0,0.5)]">
+        <div class="w-12 h-1.5 bg-gray-600 rounded-full mx-auto mt-4 mb-2"></div>
+        <button onclick="closeModal()" class="absolute top-4 right-5 text-gray-400 hover:text-white text-xl">✕</button>
+
+        <div class="overflow-y-auto px-5 pb-8 custom-scrollbar relative z-10 mb-20">
+            <img id="m-img" src="" class="w-full h-64 object-cover rounded-2xl mb-4 border border-gray-800">
+            <h3 id="m-title" class="text-3xl font-display text-white mb-1">Nombre</h3>
+            <p id="m-price" class="text-2xl text-olympus-gold font-bold mb-4">$0 MXN</p>
+            <p id="m-desc" class="text-sm text-gray-400 mb-6 leading-relaxed">Descripción</p>
+
+            <!-- Tallas -->
+            <p class="text-sm font-bold mb-3 uppercase tracking-widest text-gray-300">Selecciona Talla</p>
+            <div class="flex gap-3 mb-6" id="size-selector">
+                <button class="size-btn flex-1 border border-gray-600 py-2 rounded-xl text-sm font-medium hover:border-olympus-gold transition-colors text-white" onclick="selectSize(this)">S</button>
+                <button class="size-btn flex-1 border border-gray-600 py-2 rounded-xl text-sm font-medium hover:border-olympus-gold transition-colors text-white" onclick="selectSize(this)">M</button>
+                <button class="size-btn flex-1 border border-gray-600 py-2 rounded-xl text-sm font-medium hover:border-olympus-gold transition-colors text-white" onclick="selectSize(this)">L</button>
+                <button class="size-btn flex-1 border border-gray-600 py-2 rounded-xl text-sm font-medium hover:border-olympus-gold transition-colors text-white" onclick="selectSize(this)">XL</button>
+            </div>
+
+            <!-- Colores -->
+            <p class="text-sm font-bold mb-3 uppercase tracking-widest text-gray-300">Color</p>
+            <div class="flex gap-4 mb-8" id="color-selector">
+                <button class="color-btn w-10 h-10 rounded-full bg-black border-2 border-gray-500 ring-2 ring-transparent transition-all" data-color="Negro" onclick="selectColor(this)"></button>
+                <button class="color-btn w-10 h-10 rounded-full bg-white border-2 border-gray-300 ring-2 ring-transparent transition-all" data-color="Blanco" onclick="selectColor(this)"></button>
+                <button class="color-btn w-10 h-10 rounded-full bg-[#4F83CC] border-2 border-olympus-blue ring-2 ring-transparent transition-all" data-color="Azul Trueno" onclick="selectColor(this)"></button>
+            </div>
+
+            <!-- Botón WhatsApp -->
+            <a id="m-wa-btn" href="#" target="_blank" class="w-full bg-[#25D366] text-white font-bold py-4 rounded-xl flex items-center justify-center gap-2 hover:bg-[#20b858] transition-colors shadow-lg shadow-[#25D366]/20">
+                <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                Pedir por WhatsApp
+            </a>
+
         </div>
-        <div class="modal-img" id="modal-img-container">
-          <!-- [IMG_REPLACE: Imagen del modal dinámica] -->
-          <img src="https://via.placeholder.com/400?text=Prenda+Modal" class="w-full object-cover">
-        </div>
-        <div class="modal-body text-white">
-          <p class="modal-cat text-olympus-blue text-xs uppercase font-bold" id="modal-cat">Categoría</p>
-          <h2 class="modal-name text-xl font-bold mt-1" id="modal-name">Nombre del Producto</h2>
-          <p class="modal-price text-olympus-gold text-lg font-bold mt-2" id="modal-price">$499 MXN</p>
-          <p class="modal-desc text-sm text-gray-400 mt-3" id="modal-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          <p class="modal-sizes-label mt-4 text-sm font-semibold">Selecciona tu talla</p>
-          
-          <!-- Tallas de ejemplo -->
-          <div class="modal-sizes flex gap-2 mt-2" id="modal-sizes">
-              <button class="border border-gray-600 px-3 py-1 rounded hover:border-olympus-blue">S</button>
-              <button class="border border-gray-600 px-3 py-1 rounded hover:border-olympus-blue">M</button>
-              <button class="border border-gray-600 px-3 py-1 rounded hover:border-olympus-blue">L</button>
-          </div>
-          
-          <a class="modal-wa-btn" id="modal-wa-link" href="#" target="_blank">
-            <svg class="wa-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-            Pedir por WhatsApp
-          </a>
-        </div>
-      </div>
     </div>
 
     <!-- Contenedor vacío donde el JavaScript pintará el footer -->
     <div id="footer-container"></div>
     
-    <!-- Llama al archivo JS que acabas de crear -->
+    <!-- 1. CARGAMOS LA LIBRERÍA DE PRODUCTOS PRIMERO -->
+    <script src="script/catalogo.js"></script>
+    
+    <!-- 2. LUEGO EL FOOTER -->
     <script src="script/footer.js"></script>
 
+    <!-- 3. AL FINAL, TU LÓGICA DE INICIO -->
+    <script src="script/index.js"></script>
+
 </body>
+
 </html>

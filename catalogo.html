@@ -25,11 +25,13 @@
     <main class="w-full max-w-md mx-auto md:max-w-3xl lg:max-w-5xl px-4 pb-12 space-y-8 relative z-10">
 
         <!-- 1. VIDEO DESTACADO -->
-        <section aria-label="Video Promocional">
+        <section aria-label="Video Promocional" class="lg:mt-16 md:mt-12" >
             <div class="w-full aspect-video rounded-3xl overflow-hidden border border-gray-800 shadow-[0_0_15px_rgba(201,168,76,0.1)] relative bg-olympus-card">
                 <iframe class="absolute inset-0 w-full h-full" src="https://www.youtube.com/embed/F1B9Fk_SgI0?autoplay=1&mute=1&loop=1&playlist=F1B9Fk_SgI0&controls=0" title="Olympus Overs Colección" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
         </section>
+
+        <h1 id="products-title" class="font-display font-black uppercase text-olympus-white text-[45px] md:text-[85px] leading-[0.9] max-w-xl mb-6">Catálogo</h2>
 
         <!-- 2. SISTEMA DE FILTROS -->
         <section aria-label="Filtros de Catálogo" class="space-y-4">
@@ -55,8 +57,7 @@
 
         <!-- 3. PRODUCTOS -->
         <section aria-labelledby="products-title">
-            <div class="flex items-center justify-between mb-6">
-                <h2 id="products-title" class="font-display text-4xl tracking-wide text-olympus-white">PRODUCTOS</h2>
+            <div class="flex items-left mb-6">                
                 <span id="product-count" class="text-xs text-gray-500 font-medium">10 Artículos</span>
             </div>
 
@@ -80,7 +81,7 @@
         <div class="w-12 h-1.5 bg-gray-600 rounded-full mx-auto mt-4 mb-2"></div>
         <button onclick="closeModal()" class="absolute top-4 right-5 text-gray-400 hover:text-white text-xl">✕</button>
 
-        <div class="overflow-y-auto px-5 pb-8 custom-scrollbar relative z-10">
+        <div class="overflow-y-auto px-5 pb-8 custom-scrollbar relative z-10 mb-20">
             <img id="m-img" src="" class="w-full h-64 object-cover rounded-2xl mb-4 border border-gray-800">
             <h3 id="m-title" class="text-3xl font-display text-white mb-1">Nombre</h3>
             <p id="m-price" class="text-2xl text-olympus-gold font-bold mb-4">$0 MXN</p>
@@ -94,14 +95,11 @@
                 <button class="size-btn flex-1 border border-gray-600 py-2 rounded-xl text-sm font-medium hover:border-olympus-gold transition-colors text-white" onclick="selectSize(this)">L</button>
                 <button class="size-btn flex-1 border border-gray-600 py-2 rounded-xl text-sm font-medium hover:border-olympus-gold transition-colors text-white" onclick="selectSize(this)">XL</button>
             </div>
-
+        
             <!-- Colores -->
             <p class="text-sm font-bold mb-3 uppercase tracking-widest text-gray-300">Color</p>
-            <div class="flex gap-4 mb-8" id="color-selector">
-                <button class="color-btn w-10 h-10 rounded-full bg-black border-2 border-gray-500 ring-2 ring-transparent transition-all" data-color="Negro" onclick="selectColor(this)"></button>
-                <button class="color-btn w-10 h-10 rounded-full bg-white border-2 border-gray-300 ring-2 ring-transparent transition-all" data-color="Blanco" onclick="selectColor(this)"></button>
-                <button class="color-btn w-10 h-10 rounded-full bg-[#4F83CC] border-2 border-olympus-blue ring-2 ring-transparent transition-all" data-color="Azul Trueno" onclick="selectColor(this)"></button>
-            </div>
+            <!-- Contenedor vacío donde el JS inyectará los colores de cada prenda -->
+            <div class="flex gap-4 mb-8" id="color-selector"></div>
 
             <!-- Botón WhatsApp -->
             <a id="m-wa-btn" href="#" target="_blank" class="w-full bg-[#25D366] text-white font-bold py-4 rounded-xl flex items-center justify-center gap-2 hover:bg-[#20b858] transition-colors shadow-lg shadow-[#25D366]/20">

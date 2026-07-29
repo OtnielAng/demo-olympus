@@ -24,11 +24,6 @@ tailwind.config = {
                 'olympus-verde': '#003B28',
                 'olympus-dorado': '#E5AA2D',
 
-                // ---- Alias de compatibilidad ----
-                // Mismos nombres que ya usa el HTML existente (olympus-gold,
-                // olympus-blue, etc.) pero apuntando a los colores de la guía.
-                // Así no hay que reescribir clases en cada página, solo
-                // actualizar estos valores aquí si la guía cambia.
                 'olympus-gold': '#E5AA2D',       // = olympus-dorado (acento principal)
                 'olympus-blue': '#0A3767',       // = olympus-azul-zeus
                 'olympus-black': '#0B0908',      // = olympus-negro

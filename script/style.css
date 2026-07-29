@@ -17,6 +17,22 @@ body::before {
     opacity: 0.35;
 }
 
+/* ==========================================================
+   EFECTOS DE TEXTO ESPECIALES
+   ========================================================== */
+
+/* Glow Azul Zeus: Hace que el texto oscuro brille sobre fondos negros */
+.glow-azul-zeus {
+    color: #4F83CC; /* Un azul ligeramente más claro para que el brillo se note */
+    text-shadow: 0 0 10px rgba(79, 131, 204, 0.8), 0 0 20px rgba(79, 131, 204, 0.5);
+}
+
+.glow-azul {
+            color: #4F83CC;
+            /* Azul vibrante base */
+            text-shadow: 0 0 10px rgba(79, 131, 204, 0.7), 0 0 20px rgba(79, 131, 204, 0.4);
+        }
+
 /* ---------- Ocultar scrollbars pero permitir scroll ---------- */
 .hide-scroll::-webkit-scrollbar,
 .custom-scrollbar::-webkit-scrollbar { display: none; }
@@ -107,3 +123,82 @@ body::before {
 .text-cuerpo     { font-size: 16px; font-family: 'Montserrat', sans-serif; font-weight: 400; }
 .text-pequeno    { font-size: 14px; font-family: 'Montserrat', sans-serif; font-weight: 400; }
 .text-especial   { font-family: 'Cinzel', serif; }
+
+/* ==========================================================
+   SISTEMA DE JERARQUÍA — pase de diseño (respiro + firma visual)
+   ========================================================== */
+
+/* Etiqueta pequeña sobre un título ("NUEVO DROP", "CATÁLOGO", etc.) */
+.eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #B98E68; /* olympus-tan */
+}
+.eyebrow::before {
+    content: '';
+    width: 14px;
+    height: 1px;
+    background: #E5AA2D; /* olympus-dorado */
+    flex-shrink: 0;
+}
+
+/* Variante en azul zeus, para secciones que quieran ese acento en vez del dorado */
+.eyebrow--zeus { color: #0A3767; }
+.eyebrow--zeus::before { background: #0A3767; }
+
+/* Título de sección: reemplaza los bloques pesados border-l-4 */
+.section-heading {
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: #EEE9D7;
+    line-height: 1.15;
+}
+
+/* Separador "moneda": línea delgada dorada con un rombo al centro.
+   Es el elemento de firma de la página — úsalo bajo el eyebrow o
+   el section-heading en vez de bordes de color sólido. */
+.divider-coin {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    width: 100%;
+}
+.divider-coin::before,
+.divider-coin::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(229, 170, 45, 0.45));
+}
+.divider-coin::after { background: linear-gradient(90deg, rgba(229, 170, 45, 0.45), transparent); }
+.divider-coin .coin {
+    width: 6px;
+    height: 6px;
+    background: #E5AA2D;
+    transform: rotate(45deg);
+    flex-shrink: 0;
+}
+
+/* Tarjetas: borde sutil de marca en vez de gris genérico */
+.card-border { border: 1px solid rgba(185, 142, 104, 0.18); } /* olympus-tan al 18% */
+
+/* ==========================================================
+   HERO — fondo de rayos + resplandor Zeus
+   ========================================================== */
+
+/* Ajuste de altura para que el Hero ocupe buena parte de la pantalla */
+.hero-section {
+    min-height: 80vh;
+}
+/* Asegura que el degradado cubra todo */
+.bg-gradient-to-r {
+    background: linear-gradient(90deg, rgba(11, 9, 8, 1) 0%, rgba(11, 9, 8, 0.6) 50%, transparent 100%);
+}

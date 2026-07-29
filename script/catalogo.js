@@ -4,16 +4,19 @@
 
 // 1. BASE DE DATOS CENTRAL (Tus 10 productos exactos)
 const PRODUCTS = [
-    { id: 1, genero: 'hombre', cat: 'chamarra', title: 'Varsity Jacket Noir', price: '$1,299 MXN', img: 'https://images.unsplash.com/photo-1556821840-3a63f95609a7?q=80&w=400&auto=format&fit=crop', desc: 'Chamarra estilo universitario con mangas de cuero sintético.' },
-    { id: 2, genero: 'unisex', cat: 'boxfit', title: 'Hoodie Essential', price: '$899 MXN', img: 'https://images.unsplash.com/photo-1578681994506-b8f463449011?q=80&w=400&auto=format&fit=crop', desc: 'Sudadera con capucha corte boxy-fit, algodón pesado de 400g.' },
-    { id: 3, genero: 'hombre', cat: 'shorts', title: 'OVER 1', price: '$380 MXN', img: 'https://images.unsplash.com/photo-1591195853828-11db59a44f6b?q=80&w=400&auto=format&fit=crop', desc: 'Short deportivo de malla transpirable, ideal para el gym o el día a día.' },
-    { id: 4, genero: 'mujer', cat: 'pans', title: 'Cargo Sweatpants', price: '$799 MXN', img: 'https://images.unsplash.com/photo-1620799140188-3b2a02fd9a77?q=80&w=400&auto=format&fit=crop', desc: 'Pantalón tipo cargo en tela sweat, múltiples bolsillos.' },
-    { id: 5, genero: 'unisex', cat: 'chamarra', title: 'Puffer Jacket Zero', price: '$1,450 MXN', img: 'https://images.unsplash.com/photo-1521223830114-41525f09673a?q=80&w=400&auto=format&fit=crop', desc: 'Chamarra acolchada, repelente al agua, ideal para climas fríos.' },
-    { id: 6, genero: 'mujer', cat: 'boxfit', title: 'Cropped Hoodie OVS', price: '$650 MXN', img: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=400&auto=format&fit=crop', desc: 'Hoodie con corte crop y mangas super oversize.' },
-    { id: 7, genero: 'hombre', cat: 'pans', title: 'Tech Fleece Joggers', price: '$850 MXN', img: 'https://images.unsplash.com/photo-1552902865-b72c031ac5ea?q=80&w=400&auto=format&fit=crop', desc: 'Jogger de corte ajustado con cierre en bolsillos.' },
-    { id: 8, genero: 'unisex', cat: 'shorts', title: 'Biker Shorts Onyx', price: '$399 MXN', img: 'https://images.unsplash.com/photo-1565084888279-aca607fccece?q=80&w=400&auto=format&fit=crop', desc: 'Shorts elásticos perfectos para el gym o el streetwear.' },
-    { id: 9, genero: 'mujer', cat: 'chamarra', title: 'Windbreaker Shell', price: '$1,100 MXN', img: 'https://images.unsplash.com/photo-1543163521-1bf539c55dd2?q=80&w=400&auto=format&fit=crop', desc: 'Cortavientos ultraligero con detalles reflectantes.' },
-    { id: 10, genero: 'hombre', cat: 'boxfit', title: 'Heavyweight Tee', price: '$550 MXN', img: 'https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=400&auto=format&fit=crop', desc: 'Playera de algodón grueso, cuello cerrado y hombros caídos.' }
+    { id: 1, genero: 'hombre', cat: 'chamarra', title: 'Varsity Jacket Noir', price: '$1,299 MXN', img: 'https://images.unsplash.com/photo-1556821840-3a63f95609a7?q=80&w=400&auto=format&fit=crop', desc: 'Chamarra estilo universitario con mangas de cuero sintético.' , colores: [ { name: 'Negro', hex: '#005800' } ]},
+    { id: 2, genero: 'unisex', cat: 'boxfit', title: 'Hoodie Essential', price: '$899 MXN', img: 'https://images.unsplash.com/photo-1578681994506-b8f463449011?q=80&w=400&auto=format&fit=crop', desc: 'Sudadera con capucha corte boxy-fit, algodón pesado de 400g.' , colores: [ { name: 'Negro', hex: '#000000' } ]},
+    { id: 3, genero: 'hombre', cat: 'shorts', title: 'OVER 1', price: '$380 MXN', img: 'https://images.unsplash.com/photo-1591195853828-11db59a44f6b?q=80&w=400&auto=format&fit=crop', desc: 'Short deportivo de malla transpirable, ideal para el gym o el día a día.' , colores: [ { name: 'Negro', hex: '#006828000' } ]},
+    { id: 4, genero: 'mujer', cat: 'pans', title: 'Cargo Sweatpants', price: '$799 MXN', img: 'https://images.unsplash.com/photo-1620799140188-3b2a02fd9a77?q=80&w=400&auto=format&fit=crop', desc: 'Pantalón tipo cargo en tela sweat, múltiples bolsillos.' , colores: [ { name: 'Negro', hex: '#000000' } ]},
+    { id: 5, genero: 'unisex', cat: 'chamarra', title: 'Puffer Jacket Zero', price: '$1,450 MXN', img: 'https://images.unsplash.com/photo-1521223830114-41525f09673a?q=80&w=400&auto=format&fit=crop', desc: 'Chamarra acolchada, repelente al agua, ideal para climas fríos.' , colores: [ { name: 'Negro', hex: '#01313a' } ]},
+    { id: 6, genero: 'mujer', cat: 'boxfit', title: 'Cropped Hoodie OVS', price: '$650 MXN', img: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=400&auto=format&fit=crop', desc: 'Hoodie con corte crop y mangas super oversize.' , colores: [ { name: 'Negro', hex: '#000000' } ]},
+    { id: 7, genero: 'hombre', cat: 'pans', title: 'Tech Fleece Joggers', price: '$850 MXN', img: 'https://images.unsplash.com/photo-1552902865-b72c031ac5ea?q=80&w=400&auto=format&fit=crop', desc: 'Jogger de corte ajustado con cierre en bolsillos.' , colores: [ { name: 'Negro', hex: '#000000' } ]},
+    { id: 8, genero: 'unisex', cat: 'shorts', title: 'Biker Shorts Onyx', price: '$399 MXN', img: 'https://images.unsplash.com/photo-1565084888279-aca607fccece?q=80&w=400&auto=format&fit=crop', desc: 'Shorts elásticos perfectos para el gym o el streetwear.' , colores: [ { name: 'Negro', hex: '#000000' } ]},
+    { id: 9, genero: 'mujer', cat: 'chamarra', title: 'Windbreaker Shell', price: '$1,100 MXN', img: 'https://images.unsplash.com/photo-1543163521-1bf539c55dd2?q=80&w=400&auto=format&fit=crop', desc: 'Cortavientos ultraligero con detalles reflectantes.' , colores: [ { name: 'Negro', hex: '#000000' } ]},
+    { id: 10, genero: 'hombre', cat: 'boxfit', title: 'Heavyweight Tee', price: '$550 MXN', img: 'https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=400&auto=format&fit=crop', desc: 'Playera de algodón grueso, cuello cerrado y hombros caídos.', colores:  [ 
+            { name: 'Negro', hex: '#000000' }, 
+            { name: 'Blanco', hex: '#856a26' }, 
+            { name: 'Azul Trueno', hex: '#4Fa877' }]}
 ];
 
 // 2. VARIABLES GLOBALES
@@ -32,6 +35,9 @@ function renderGrid() {
     const noResults = document.getElementById('no-results');
     const productCount = document.getElementById('product-count');
 
+    // SOLUCIÓN: Validamos que el elemento exista antes de interactuar con él.
+    if (!grid) return;
+
     // Filtrar la lista
     const filtered = PRODUCTS.filter(p => {
         let matchGender = (currentGender === 'todo') ||
@@ -42,13 +48,15 @@ function renderGrid() {
         return matchGender && matchCat;
     });
 
-    productCount.textContent = `${filtered.length} Artículo${filtered.length !== 1 ? 's' : ''}`;
+    if (productCount) {
+        productCount.textContent = `${filtered.length} Artículo${filtered.length !== 1 ? 's' : ''}`;
+    }
 
     if (filtered.length === 0) {
         grid.innerHTML = '';
-        noResults.style.display = 'block';
+        if (noResults) noResults.style.display = 'block';
     } else {
-        noResults.style.display = 'none';
+        if (noResults) noResults.style.display = 'none';
 
         // PINTA TU CÓDIGO HTML EXACTO + EL BOTÓN AZUL
         grid.innerHTML = filtered.map(p => `
@@ -63,7 +71,7 @@ function renderGrid() {
                 </div>
                 <div class="mt-auto">
                     <button class="w-full bg-olympus-blue hover:bg-blue-600 text-white font-bold py-3 my-3 rounded-xl uppercase text-xs tracking-widest shadow-[0_0_10px_rgba(79,131,204,0.4)] transition-all group-hover:scale-[1.02]">
-                        Comprar Ahora
+                        Comprar
                     </button>
                 </div>
             </article>
@@ -94,6 +102,7 @@ const bottomSheet = document.getElementById('bottom-sheet');
 const waBtn = document.getElementById('m-wa-btn');
 
 const updateWaLink = () => {
+    if (!waBtn) return;
     const message = `Hola! Quiero pedir:\n*${currentTitle}*\nTalla: ${selectedSize}\nColor: ${selectedColor}\nPrecio: ${currentPrice}\n\nMe confirmas disponibilidad?`;
     waBtn.href = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
 };
@@ -101,39 +110,62 @@ const updateWaLink = () => {
 function openModal(id) {
     const product = PRODUCTS.find(p => p.id === id);
 
-    // Resetear visualmente tallas y colores
+    // Resetear visualmente tallas
     selectedSize = 'No seleccionada';
     selectedColor = 'No seleccionado';
     document.querySelectorAll('.size-btn').forEach(b => {
         b.classList.remove('bg-olympus-gold', 'text-black', 'border-olympus-gold');
         b.classList.add('border-gray-600', 'text-white');
     });
-    document.querySelectorAll('.color-btn').forEach(b => b.classList.remove('ring-olympus-gold'));
 
-    // Llenar datos
+    // Llenar datos básicos del producto
     currentTitle = product.title;
     currentPrice = product.price;
-    document.getElementById('m-title').textContent = currentTitle;
-    document.getElementById('m-price').textContent = currentPrice;
-    document.getElementById('m-img').src = product.img;
-    document.getElementById('m-desc').textContent = product.desc;
+    const titleEl = document.getElementById('m-title');
+    const priceEl = document.getElementById('m-price');
+    const imgEl = document.getElementById('m-img');
+    const descEl = document.getElementById('m-desc');
+
+    if (titleEl) titleEl.textContent = currentTitle;
+    if (priceEl) priceEl.textContent = currentPrice;
+    if (imgEl) imgEl.src = product.img;
+    if (descEl) descEl.textContent = product.desc;
+
+    // GENERAR LOS BOTONES DE COLORES DINÁMICAMENTE SEGÚN EL PRODUCTO
+    const colorContainer = document.getElementById('color-selector');
+    if (colorContainer && product.colores) {
+        colorContainer.innerHTML = product.colores.map(c => {
+            let borderClass = c.hex.toUpperCase() === '#FFFFFF' ? 'border-gray-300' : 'border-gray-500';
+            return `<button class="color-btn w-10 h-10 rounded-full border-2 ${borderClass} ring-2 ring-transparent transition-all" style="background-color: ${c.hex};" data-color="${c.name}" onclick="selectColor(this)"></button>`;
+        }).join('');
+
+        // Si la prenda solo tiene 1 color disponible, se auto-selecciona por comodidad
+        if (product.colores.length === 1) {
+            const unicoBoton = colorContainer.querySelector('.color-btn');
+            if (unicoBoton) selectColor(unicoBoton);
+        }
+    }
 
     updateWaLink();
 
-    // Mostrar modal
-    modalOverlay.classList.remove('hidden');
-    setTimeout(() => {
-        modalOverlay.classList.remove('opacity-0');
-        bottomSheet.classList.remove('translate-y-full');
-    }, 10);
+    // Mostrar modal con animación
+    if (modalOverlay && bottomSheet) {
+        modalOverlay.classList.remove('hidden');
+        setTimeout(() => {
+            modalOverlay.classList.remove('opacity-0');
+            bottomSheet.classList.remove('translate-y-full');
+        }, 10);
+    }
 }
 
 function closeModal() {
-    bottomSheet.classList.add('translate-y-full');
-    modalOverlay.classList.add('opacity-0');
-    setTimeout(() => {
-        modalOverlay.classList.add('hidden');
-    }, 300);
+    if (bottomSheet && modalOverlay) {
+        bottomSheet.classList.add('translate-y-full');
+        modalOverlay.classList.add('opacity-0');
+        setTimeout(() => {
+            modalOverlay.classList.add('hidden');
+        }, 300);
+    }
 }
 
 // Selección de Talla y Color en el modal
@@ -157,4 +189,3 @@ function selectColor(btn) {
 
 // Inicializar el renderizado al cargar
 renderGrid();
-

@@ -21,17 +21,21 @@ const navbarHTML = `
     }
 
     #olympus-navbar a {
-        font-family: 'Bebas Neue', sans-serif;
-        text-decoration: none;
-        color: #ffffff;
-        font-size: 1.2rem;
-        letter-spacing: 0.15rem;
-        margin: 0 20px;
-        text-transform: uppercase;
-        opacity: 0.4;
-        transition: all 0.3s ease;
-        cursor: pointer;
-    }
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 900; /* Peso máximo para que tengan mucha presencia */
+    font-stretch: condensed; /* Comprime las letras de los lados (si el navegador lo soporta) */
+    transform: scaleX(0.85); /* ¡Efecto de apretón! Las contrae horizontalmente al 85% */
+    display: inline-block; /* Necesario para que el transform scaleX funcione bien en enlaces */
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1.2rem;
+    letter-spacing: 0.15rem;
+    margin: 0 20px;
+    text-transform: uppercase;
+    opacity: 0.4;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
 
     #olympus-navbar a:hover,
     #olympus-navbar a.active {
