@@ -6,12 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Olympus Overs | Inicio</title>
 
-    <!-- Fuentes de marca: League Spartan, Montserrat, Cinzel -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Cinzel:ital,wght@0,400;0,600;0,700;1,400&family=League+Spartan:wght@500;600;700;800;900&family=Montserrat:wght@400;500;700&display=swap"
-        rel="stylesheet">
+
+    <!-- Carga diferida inteligente de fuentes (Evita bloquear el render) -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=League+Spartan:wght@500;600;700;800;900&family=Montserrat:wght@400;500;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=League+Spartan:wght@500;600;700;800;900&family=Montserrat:wght@400;500;700&display=swap" media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=League+Spartan:wght@500;600;700;800;900&family=Montserrat:wght@400;500;700&display=swap">
+    </noscript>
 
     <!-- Tailwind CSS por CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -19,6 +22,8 @@
 
     <!-- Estilos Personalizados -->
     <link rel="stylesheet" href="script/style.css">
+
+    <link rel="preload" as="image" href="img/descarga.jpg" fetchpriority="high">
 </head>
 
 <body class="bg-olympus-black text-olympus-white font-sans antialiased overflow-x-hidden">
@@ -35,8 +40,7 @@
             class="relative w-full h-[600px] md:h-[800px] flex items-end pb-16 overflow-hidden lg:mt-16 md:mt-12">
 
             <!-- IMAGEN DE FONDO (Sin lazy loading porque está en la primera pantalla) -->
-            <img src="img/descarga.jpg" alt="Fondo Colección Zeus"
-                class="absolute inset-0 w-full h-full object-cover z-0">
+            <img src="img/descarga.jpg" alt="Fondo Colección Zeus" fetchpriority="high" class="absolute inset-0 w-full h-full object-cover z-0">
 
             <!-- DEGRADADO INFERIOR -->
             <div class="absolute inset-0 bg-gradient-to-t from-olympus-negro via-olympus-negro/40 to-transparent z-0">
