@@ -196,7 +196,7 @@ const PRODUCTS = [
     colores: [ { name: 'Negro', hex: '#000000' } ]},
     
     { id: 10, genero: 'unisex', cat: 'Baggy', title: 'Baggy Básico', tallas: ['S', 'M', 'L', 'XL'], price: '$899 MXN', img: [
-        'img/baggy/baggy-basic.PNG'                  
+        'img/Baggy/baggy-basic.PNG'                  
     ], 
     desc: `
         <p class="mb-3">Pants Olympus Overs está confeccionado en French Terry premium, una mezcla de algodón y elastano que ofrece una excelente elasticidad, suavidad y transpirabilidad para acompañarte tanto en tus entrenamientos como en el día a día. Su corte baggy brinda un estilo urbano con máxima comodidad, mientras que la cintura con resorte y cordón ajustable proporciona un ajuste seguro.</p>
@@ -215,7 +215,7 @@ const PRODUCTS = [
     colores: [ { name: 'Negro', hex: '#000000' } ]},
 
     { id: 11, genero: 'unisex', cat: 'Baggy', title: 'Baggy Zeus', tallas: ['S', 'M', 'L', 'XL'], price: '$899 MXN', img: [
-        'img/baggy/baggy-zeus.PNG'                                   
+        'img/Baggy/baggy-zeus.PNG'                                   
     ], 
     desc: `
         <p class="mb-3">Pants Olympus Overs está confeccionado en French Terry premium, una mezcla de algodón y elastano que ofrece una excelente elasticidad, suavidad y transpirabilidad para acompañarte tanto en tus entrenamientos como en el día a día. Su corte baggy brinda un estilo urbano con máxima comodidad, mientras que la cintura con resorte y cordón ajustable proporciona un ajuste seguro.</p>
