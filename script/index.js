@@ -68,7 +68,7 @@ const lookModalHTML = `
         <div class="w-12 h-1.5 bg-gray-600 rounded-full mx-auto mt-4 mb-2"></div>
         <button onclick="closeLook()" class="absolute top-4 right-5 text-gray-400 hover:text-white text-xl z-20 bg-black/50 w-8 h-8 rounded-full flex items-center justify-center">✕</button>
 
-        <div class="overflow-y-auto px-5 pb-8 custom-scrollbar relative z-10">
+        <div class="overflow-y-auto px-5 pb-8 custom-scrollbar relative z-10 mb-20 md:mb-0">
             <h3 id="l-title" class="text-2xl font-display text-olympus-dorado mb-6 mt-2 text-center tracking-widest uppercase">Nombre del Look</h3>
             
             <p class="text-xs font-bold mb-4 uppercase tracking-[0.2em] text-gray-400 text-center">Prendas en este look</p>

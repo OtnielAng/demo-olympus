@@ -22,14 +22,14 @@ const footerHTML = `
             </ul>
         </div>
 
-        <!-- 3. NOSHoodieS -->
+        <!-- 3. NOSOTROS -->
         <div class="flex flex-col items-center md:items-start text-center md:text-left">
-            <h4 class="font-display text-xl text-white tracking-widest mb-4 uppercase">NosHoodies</h4>
+            <h4 class="font-display text-xl text-white tracking-widest mb-4 uppercase">Nosotros</h4>
             <ul class="space-y-3 text-sm text-gray-400">
-                <!-- Estas secciones viven en contacto.html y nosHoodies.html -->
+                <!-- Estas secciones viven en contacto.html y nosotros.html -->
                 <li><a href="contacto.html#sucursales" class="hover:text-olympus-gold transition-colors uppercase tracking-wider text-xs">Sucursales</a></li>
                 <li><a href="contacto.html#puntos-de-venta" class="hover:text-olympus-gold transition-colors uppercase tracking-wider text-xs">Puntos de Venta</a></li>
-                <li><a href="nosHoodies.html#faq" class="hover:text-olympus-gold transition-colors uppercase tracking-wider text-xs">Nuestra Historia & FAQs</a></li>
+                <li><a href="nosotros.html#faq" class="hover:text-olympus-gold transition-colors uppercase tracking-wider text-xs">Nuestra Historia & FAQs</a></li>
             </ul>
         </div>
 
@@ -86,7 +86,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 : "filter-btn cat-btn snap-start shrink-0 px-4 py-1.5 rounded-lg border border-gray-800 bg-olympus-card text-gray-400 hover:text-white text-xs transition-colors";
         });
 
-        // Volvemos a pintar los productos con el filtro aplicado
-        renderGrid();
+        // VALIDACIÓN DE SEGURIDAD: Solo ejecutar si la función existe en la página actual
+        if (typeof renderGrid === 'function') {
+            renderGrid();
+        }
     }
 });

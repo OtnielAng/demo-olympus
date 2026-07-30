@@ -364,10 +364,8 @@ const modalHTML = `
         </div>
     </div>
 `;
-// Insertamos el modal al final del body
-document.body.insertAdjacentHTML('beforeend', modalHTML);
 
-// Insertamos el modal al final del body
+// Insertamos el modal al final del body una sola vez
 document.body.insertAdjacentHTML('beforeend', modalHTML);
 
 // Referencias a los elementos del modal
