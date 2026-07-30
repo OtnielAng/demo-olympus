@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olympus Overs | Guía de Tallas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="script/style.css">
+</head>
+<body class="bg-olympus-black text-white font-sans antialiased pb-20">
+
+    <div id="navbar-container"></div>
+    <script src="script/navbar.js"></script>
+
+    <main class="max-w-2xl mx-auto px-4 pt-16">
+        <h1 class="font-display text-4xl text-center mb-8 uppercase tracking-widest text-olympus-gold">Guía de Tallas</h1>
+
+        <!-- Pestañas -->
+        <div class="flex border-b border-gray-800 mb-8">
+            <button onclick="showTable('tops')" id="btn-tops" class="flex-1 py-3 text-sm font-bold uppercase border-b-2 border-olympus-gold text-olympus-gold">Playeras / Hoodies</button>
+            <button onclick="showTable('baggy')" id="btn-baggy" class="flex-1 py-3 text-sm font-bold uppercase border-b-2 border-transparent text-gray-500">Baggy / Pans</button>
+        </div>
+
+        <!-- Tabla Tops -->
+        <div id="table-tops" class="overflow-x-auto">
+            <table class="w-full text-center border-collapse">
+                <thead><tr class="text-olympus-gold text-xs uppercase"><th class="p-3">Talla</th><th class="p-3">Ancho</th><th class="p-3">Largo</th></tr></thead>
+                <tbody class="text-sm text-gray-300">
+                    <tr class="border-b border-gray-800"><td>S</td><td>52cm</td><td>70cm</td></tr>
+                    <tr class="border-b border-gray-800"><td>M</td><td>55cm</td><td>72cm</td></tr>
+                    <!-- ... más filas -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Tabla Baggy -->
+        <div id="table-baggy" class="hidden overflow-x-auto">
+            <table class="w-full text-center border-collapse">
+                <thead><tr class="text-olympus-gold text-xs uppercase"><th class="p-3">Talla</th><th class="p-3">Cintura</th><th class="p-3">Largo</th></tr></thead>
+                <tbody class="text-sm text-gray-300">
+                    <tr class="border-b border-gray-800"><td>S</td><td>38cm</td><td>100cm</td></tr>
+                    <!-- ... más filas -->
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <script>
+        function showTable(type) {
+            document.getElementById('table-tops').classList.toggle('hidden', type !== 'tops');
+            document.getElementById('table-baggy').classList.toggle('hidden', type !== 'baggy');
+            
+            document.getElementById('btn-tops').className = type === 'tops' ? "flex-1 py-3 text-sm font-bold uppercase border-b-2 border-olympus-gold text-olympus-gold" : "flex-1 py-3 text-sm font-bold uppercase border-b-2 border-transparent text-gray-500";
+            document.getElementById('btn-baggy').className = type === 'baggy' ? "flex-1 py-3 text-sm font-bold uppercase border-b-2 border-olympus-gold text-olympus-gold" : "flex-1 py-3 text-sm font-bold uppercase border-b-2 border-transparent text-gray-500";
+        }
+    </script>
+</body>
+</html>

@@ -13,22 +13,23 @@ const footerHTML = `
             <h4 class="font-display text-xl text-white tracking-widest mb-4 uppercase">Comprar</h4>
             <!-- Al dar clic, mandan a index.html y le envían una "señal" en la URL (?filter=...) -->
             <ul class="space-y-3 text-sm text-gray-400">
-                <li><a href="catalogo.html?filter=chamarra" class="hover:text-olympus-gold transition-colors uppercase tracking-wider text-xs">Chamarra</a></li>
-                <li><a href="catalogo.html?filter=pans" class="hover:text-olympus-gold transition-colors uppercase tracking-wider text-xs">Pans</a></li>
-                <li><a href="catalogo.html?filter=shorts" class="hover:text-olympus-gold transition-colors uppercase tracking-wider text-xs">Shorts</a></li>
-                <li><a href="catalogo.html?filter=boxfit" class="hover:text-olympus-gold transition-colors uppercase tracking-wider text-xs">Boxfit</a></li>
-                <li><a href="catalogo.html?filter=otro" class="hover:text-olympus-gold transition-colors uppercase tracking-wider text-xs">Otro</a></li>
+                <li><a href="catalogo.html?filter=Over Size" class="hover:text-olympus-gold transition-colors uppercase tracking-wider text-xs">Over Size</a></li>
+                <li><a href="catalogo.html?filter=BoxFit" class="hover:text-olympus-gold transition-colors uppercase tracking-wider text-xs">BoxFit</a></li>
+                <li><a href="catalogo.html?filter=Deslavada" class="hover:text-olympus-gold transition-colors uppercase tracking-wider text-xs">Deslavada</a></li>
+                <li><a href="catalogo.html?filter=Tank" class="hover:text-olympus-gold transition-colors uppercase tracking-wider text-xs">Tank</a></li>
+                <li><a href="catalogo.html?filter=Hoodie" class="hover:text-olympus-gold transition-colors uppercase tracking-wider text-xs">Hoodie</a></li>
+                <li><a href="catalogo.html?filter=Baggy" class="hover:text-olympus-gold transition-colors uppercase tracking-wider text-xs">Baggy</a></li>
             </ul>
         </div>
 
-        <!-- 3. NOSOTROS -->
+        <!-- 3. NOSHoodieS -->
         <div class="flex flex-col items-center md:items-start text-center md:text-left">
-            <h4 class="font-display text-xl text-white tracking-widest mb-4 uppercase">Nosotros</h4>
+            <h4 class="font-display text-xl text-white tracking-widest mb-4 uppercase">NosHoodies</h4>
             <ul class="space-y-3 text-sm text-gray-400">
-                <!-- Estas secciones viven en contacto.html y nosotros.html -->
+                <!-- Estas secciones viven en contacto.html y nosHoodies.html -->
                 <li><a href="contacto.html#sucursales" class="hover:text-olympus-gold transition-colors uppercase tracking-wider text-xs">Sucursales</a></li>
                 <li><a href="contacto.html#puntos-de-venta" class="hover:text-olympus-gold transition-colors uppercase tracking-wider text-xs">Puntos de Venta</a></li>
-                <li><a href="nosotros.html#faq" class="hover:text-olympus-gold transition-colors uppercase tracking-wider text-xs">Nuestra Historia & FAQs</a></li>
+                <li><a href="nosHoodies.html#faq" class="hover:text-olympus-gold transition-colors uppercase tracking-wider text-xs">Nuestra Historia & FAQs</a></li>
             </ul>
         </div>
 
@@ -63,3 +64,29 @@ const footerHTML = `
 
 // Insertar el HTML dentro del contenedor reservado
 document.getElementById('footer-container').innerHTML = footerHTML;
+
+// ==========================================
+// 6. LEER FILTROS DESDE LA URL (FOOTER)
+// ==========================================
+document.addEventListener('DOMContentLoaded', () => {
+    // Leemos los parámetros de la URL actual
+    const params = new URLSearchParams(window.location.search);
+    const filterFromURL = params.get('filter');
+
+    // Si existe una señal de filtro en la URL, la aplicamos
+    if (filterFromURL) {
+        currentCat = filterFromURL;
+        
+        // Actualizamos los botones visualmente para que se marque el correcto
+        document.querySelectorAll('.cat-btn').forEach(b => {
+            const isActive = b.getAttribute('data-filter') === currentCat;
+            
+            b.className = isActive 
+                ? "filter-btn cat-btn snap-start shrink-0 px-4 py-1.5 rounded-lg border border-olympus-blue/50 bg-olympus-blue/10 text-olympus-blue font-medium text-xs transition-colors" 
+                : "filter-btn cat-btn snap-start shrink-0 px-4 py-1.5 rounded-lg border border-gray-800 bg-olympus-card text-gray-400 hover:text-white text-xs transition-colors";
+        });
+
+        // Volvemos a pintar los productos con el filtro aplicado
+        renderGrid();
+    }
+});

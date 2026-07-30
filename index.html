@@ -33,7 +33,7 @@
              1. HERO SECTION (Texto Inferior)
         ========================== -->
         <section aria-label="Inicio"
-            class="relative w-full h-[600px] md:h-[800px] flex items-end pb-16 overflow-hidden">
+            class="relative w-full h-[600px] md:h-[800px] flex items-end pb-16 overflow-hidden lg:mt-16 md:mt-12">
 
             <!-- IMAGEN DE FONDO -->
             <img src="img/descarga.jpg" alt="Fondo Colección Zeus"
@@ -55,14 +55,15 @@
             <div class="relative z-10 w-full max-w-5xl mx-auto px-6 md:px-10 flex flex-col items-start justify-end">
 
                 <!-- Eyebrow: Usando Cinzel (font-special) y Glow -->
-                <span class="font-special text-sm font-bold tracking-[0.2em] uppercase mb-3 glow-azul">Nuevo Drop
-                    Zeus</span>
+                <span class="font-special text-sm font-bold tracking-[0.2em] uppercase mb-6 glow-azul">NACISTE PARA
+                    TRASCENDER</span>
 
                 <!-- Headline grande: Usando League Spartan (font-display) -->
                 <h1
-                    class="font-display font-black uppercase text-olympus-white text-[45px] md:text-[85px] leading-[0.9] max-w-xl mb-6">
-                    NACISTE PARA TRASCENDER
+                    class="font-display font-black uppercase text-olympus-white text-[45px] md:text-[85px] leading-[0.9] max-w-xl mb-3">
+                    Nuevo Drop Zeus
                 </h1>
+                <span class="font-special text-sm font-bold tracking-[1em] uppercase mb-6 glow-azul">NUEVO DROP</span>
 
                 <!-- Subheadline: Usando Montserrat (font-sans) -->
                 <p class="font-sans text-olympus-gris text-sm md:text-base max-w-xs mb-8">
@@ -70,7 +71,7 @@
                     Diseñada para quienes construyen su legado.
                 </p>
 
-                <!-- CTA Botones (SIN AZUL) -->
+                <!-- CTA Botones  -->
                 <div class="flex gap-4">
                     <!-- Botón Principal Dorado -->
                     <a href="catalogo.html"
@@ -80,7 +81,7 @@
                     <!-- Botón Secundario Transparente c/ Borde Blanco -->
                     <a href="nosotros.html"
                         class="border border-olympus-white/30 text-white font-bold uppercase text-xs tracking-[0.1em] px-8 py-3 rounded-sm hover:bg-white/10 transition-all">
-                        Conoce más
+                        Conocenos
                     </a>
                 </div>
             </div>
@@ -98,10 +99,11 @@
                 </div>
 
                 <div class="absolute bottom-0 left-0 p-7 w-full">
-                    <span
-                        class="font-special text-olympus-dorado text-xs tracking-[0.2em] uppercase mb-2 block">Colección</span>
-                    <h3 class="font-display text-olympus-white font-bold uppercase tracking-wide text-3xl mb-3">Nueva
-                        Colección</h3>
+                    <span class="font-special text-olympus-dorado text-xs tracking-[0.2em] uppercase mb-2 block">Nueva
+                        Colección</span>
+                    <h3
+                        class="font-display text-olympus-white font-bold uppercase tracking-wide text-3xl mb-3  glow-azul">
+                        Drop Zeus</h3>
                     <p class="font-sans text-sm text-olympus-white/80 mb-5 line-clamp-2 max-w-sm">
                         La fuerza de los dioses tejida en prendas pesadas de corte oversize.
                     </p>
@@ -120,24 +122,27 @@
             <div class="mb-6">
                 <h3 id="looks-title" class="font-display text-olympus-white font-bold uppercase tracking-wide text-2xl">
                     Inspírate en los looks</h3>
-                <div class="divider-coin mt-3"><span class="coin"></span></div>
+
             </div>
 
             <!-- Modificamos el contenedor: 
                  En móvil sigue siendo un flex con scroll horizontal (snap).
                  En 'md' (tablets) y 'lg' (computadoras) cambia a un grid de 3 columnas para usar el espacio. -->
-            <div class="flex md:grid md:grid-cols-3 overflow-x-auto md:overflow-visible hide-scroll snap-x snap-mandatory gap-4 md:gap-6 pb-2">
-                
+            <div
+                class="flex md:grid md:grid-cols-3 overflow-x-auto md:overflow-visible hide-scroll snap-x snap-mandatory gap-4 md:gap-6 pb-2">
+
                 <!-- Tarjeta Look 1 -->
                 <!-- Cambiamos 'w-[220px]' por 'w-[75vw] md:w-full' para que sea flexible -->
                 <article
                     class="relative snap-center shrink-0 w-[75vw] md:w-full h-[320px] md:h-[400px] lg:h-[450px] rounded-2xl overflow-hidden bg-olympus-dark card-border flex flex-col justify-end">
                     <img src="img/descarga.jpg" class="absolute inset-0 w-full h-full object-cover z-0" alt="Look 1">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent z-0"></div>
+
+                    <!-- ... Logica tarjeta Look 1 ... -->
                     <div class="relative z-10 p-4 w-full">
                         <p class="font-special text-sm font-bold text-olympus-dorado mb-3">Zeus Fit #1</p>
-                        <!-- Botón Blanco (Sin azul) -->
-                        <button
+                        <!-- Agregamos el onclick con el ID del look -->
+                        <button onclick="openLook(1)"
                             class="w-full bg-olympus-white text-olympus-negro font-bold uppercase text-xs tracking-[0.1em] py-3 rounded-sm hover:opacity-90 transition-opacity">
                             Comprar look
                         </button>
@@ -149,9 +154,12 @@
                     class="relative snap-center shrink-0 w-[75vw] md:w-full h-[320px] md:h-[400px] lg:h-[450px] rounded-2xl overflow-hidden bg-olympus-dark card-border flex flex-col justify-end">
                     <img src="img/descarga.jpg" class="absolute inset-0 w-full h-full object-cover z-0" alt="Look 2">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent z-0"></div>
+
+                    <!-- ... Logica tarjeta Look 2 ... -->
                     <div class="relative z-10 p-4 w-full">
                         <p class="font-special text-sm font-bold text-olympus-dorado mb-3">Zeus Fit #2</p>
-                        <button
+                        <!-- Agregamos el onclick con el ID del look -->
+                        <button onclick="openLook(2)"
                             class="w-full bg-olympus-white text-olympus-negro font-bold uppercase text-xs tracking-[0.1em] py-3 rounded-sm hover:opacity-90 transition-opacity">
                             Comprar look
                         </button>
@@ -163,9 +171,12 @@
                     class="relative snap-center shrink-0 w-[75vw] md:w-full h-[320px] md:h-[400px] lg:h-[450px] rounded-2xl overflow-hidden bg-olympus-dark card-border flex flex-col justify-end">
                     <img src="img/descarga.jpg" class="absolute inset-0 w-full h-full object-cover z-0" alt="Look 3">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent z-0"></div>
+
+                    <!-- ... Logica tarjeta Look 3 ... -->
                     <div class="relative z-10 p-4 w-full">
                         <p class="font-special text-sm font-bold text-olympus-dorado mb-3">Zeus Fit #3</p>
-                        <button
+                        <!-- Agregamos el onclick con el ID del look -->
+                        <button onclick="openLook(3)"
                             class="w-full bg-olympus-white text-olympus-negro font-bold uppercase text-xs tracking-[0.1em] py-3 rounded-sm hover:opacity-90 transition-opacity">
                             Comprar look
                         </button>
@@ -182,11 +193,12 @@
             <div class="mb-6">
                 <h3 id="catalog-title"
                     class="font-display text-olympus-white font-bold uppercase tracking-wide text-2xl">Catálogo</h3>
-                <div class="divider-coin mt-3"><span class="coin"></span></div>
+
             </div>
 
             <!-- Aquí inyectaremos los 3 productos -->
-            <div id="index-product-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 relative min-h-[300px] content-start">
+            <div id="index-product-grid"
+                class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 relative min-h-[300px] content-start">
                 <!-- El JS llenará esto -->
             </div>
 
@@ -197,7 +209,7 @@
                 </a>
             </div>
         </section>
-        
+
         <!-- =========================
              5. NOSOTROS (Tarjeta)
         ========================== -->
@@ -212,10 +224,12 @@
                     Forjados para aquellos que no se conforman. Nuestra misión es entregar cortes perfectos y materiales
                     que soporten tu estilo de vida.
                 </p>
-                <button
-                    class="bg-olympus-dorado text-olympus-negro font-bold uppercase text-xs tracking-[0.1em] px-8 py-3 rounded-sm hover:opacity-90 transition-opacity w-full md:w-auto">
-                    Ver más
-                </button>
+                <a href="nosotros.html">
+                    <button
+                        class="bg-olympus-dorado text-olympus-negro font-bold uppercase text-xs tracking-[0.1em] px-8 py-3 rounded-sm hover:opacity-90 transition-opacity w-full md:w-auto">
+                        Ver más
+                    </button>
+                </a>
             </article>
         </section>
 
@@ -223,39 +237,16 @@
              6. RESEÑAS
         ========================== -->
         <section aria-labelledby="reviews-title">
-            <div class="mb-6">
-                <h3 id="reviews-title"
-                    class="font-display text-olympus-white font-bold uppercase tracking-wide text-2xl">Reseñas</h3>
-                <div class="divider-coin mt-3"><span class="coin"></span></div>
-            </div>
+    <div class="mb-6">
+        <h3 id="reviews-title" class="font-display text-olympus-white font-bold uppercase tracking-wide text-2xl">Reseñas</h3>
+        <div class="divider-coin mt-3"><span class="coin"></span></div>
+    </div>
 
-            <div class="flex overflow-x-auto hide-scroll snap-x snap-mandatory gap-4 pb-2">
-                <!-- Tarjeta Reseña 1 -->
-                <article class="snap-center shrink-0 w-[260px] bg-olympus-card rounded-2xl p-6 border border-gray-800">
-                    <div class="flex gap-1 mb-4 review-stars-container"></div>
-                    <p class="font-special text-sm text-olympus-white italic mb-5 leading-relaxed">"Calidad increíble y
-                        diseño brutal. Perfecta para entrenar."</p>
-                    <!-- Nombre con Glow -->
-                    <p class="font-sans text-[11px] font-bold uppercase tracking-wide glow-azul">— Usuario Uno</p>
-                </article>
-
-                <!-- Tarjeta Reseña 2 -->
-                <article class="snap-center shrink-0 w-[260px] bg-olympus-card rounded-2xl p-6 border border-gray-800">
-                    <div class="flex gap-1 mb-4 review-stars-container"></div>
-                    <p class="font-special text-sm text-olympus-white italic mb-5 leading-relaxed">"El fit oversize es
-                        perfecto. La tela pesa y se siente muy premium."</p>
-                    <p class="font-sans text-[11px] font-bold uppercase tracking-wide glow-azul">— Usuario Dos</p>
-                </article>
-
-                <!-- Tarjeta Reseña 3 -->
-                <article class="snap-center shrink-0 w-[260px] bg-olympus-card rounded-2xl p-6 border border-gray-800">
-                    <div class="flex gap-1 mb-4 review-stars-container"></div>
-                    <p class="font-special text-sm text-olympus-white italic mb-5 leading-relaxed">"Llegó rapidísimo y
-                        la atención al cliente de 10. Ya pedí otra."</p>
-                    <p class="font-sans text-[11px] font-bold uppercase tracking-wide glow-azul">— Usuario Tres</p>
-                </article>
-            </div>
-        </section>
+    <!-- AQUÍ ES DONDE EL JAVASCRIPT INYECTA LAS RESEÑAS -->
+    <div id="reviews-container-index" class="flex overflow-x-auto hide-scroll snap-x snap-mandatory gap-4 pb-2">
+        <!-- Las reseñas aparecerán aquí -->
+    </div>
+</section>
 
         <!-- =========================
              7. REDES SOCIALES
@@ -299,58 +290,15 @@
 
     </main>
 
-<!-- =========================
-         MODAL / BOTTOM SHEET
-    ========================== -->
-    <div id="modal-overlay" class="fixed inset-0 bg-black/70 z-40 hidden opacity-0 transition-opacity duration-300 backdrop-blur-sm" onclick="closeModal()"></div>
-    
-    <div id="bottom-sheet" class="fixed bottom-0 left-1/2 transform -translate-x-1/2 w-full max-w-md bg-olympus-card z-50 rounded-t-3xl border-t border-gray-800 transition-transform duration-300 translate-y-full flex flex-col max-h-[90vh] shadow-[0_-10px_40px_rgba(0,0,0,0.5)]">
-        <div class="w-12 h-1.5 bg-gray-600 rounded-full mx-auto mt-4 mb-2"></div>
-        <button onclick="closeModal()" class="absolute top-4 right-5 text-gray-400 hover:text-white text-xl">✕</button>
-
-        <div class="overflow-y-auto px-5 pb-8 custom-scrollbar relative z-10 mb-20">
-            <img id="m-img" src="" class="w-full h-64 object-cover rounded-2xl mb-4 border border-gray-800">
-            <h3 id="m-title" class="text-3xl font-display text-white mb-1">Nombre</h3>
-            <p id="m-price" class="text-2xl text-olympus-gold font-bold mb-4">$0 MXN</p>
-            <p id="m-desc" class="text-sm text-gray-400 mb-6 leading-relaxed">Descripción</p>
-
-            <!-- Tallas -->
-            <p class="text-sm font-bold mb-3 uppercase tracking-widest text-gray-300">Selecciona Talla</p>
-            <div class="flex gap-3 mb-6" id="size-selector">
-                <button class="size-btn flex-1 border border-gray-600 py-2 rounded-xl text-sm font-medium hover:border-olympus-gold transition-colors text-white" onclick="selectSize(this)">S</button>
-                <button class="size-btn flex-1 border border-gray-600 py-2 rounded-xl text-sm font-medium hover:border-olympus-gold transition-colors text-white" onclick="selectSize(this)">M</button>
-                <button class="size-btn flex-1 border border-gray-600 py-2 rounded-xl text-sm font-medium hover:border-olympus-gold transition-colors text-white" onclick="selectSize(this)">L</button>
-                <button class="size-btn flex-1 border border-gray-600 py-2 rounded-xl text-sm font-medium hover:border-olympus-gold transition-colors text-white" onclick="selectSize(this)">XL</button>
-            </div>
-
-            <!-- Colores -->
-            <p class="text-sm font-bold mb-3 uppercase tracking-widest text-gray-300">Color</p>
-            <div class="flex gap-4 mb-8" id="color-selector">
-                <button class="color-btn w-10 h-10 rounded-full bg-black border-2 border-gray-500 ring-2 ring-transparent transition-all" data-color="Negro" onclick="selectColor(this)"></button>
-                <button class="color-btn w-10 h-10 rounded-full bg-white border-2 border-gray-300 ring-2 ring-transparent transition-all" data-color="Blanco" onclick="selectColor(this)"></button>
-                <button class="color-btn w-10 h-10 rounded-full bg-[#4F83CC] border-2 border-olympus-blue ring-2 ring-transparent transition-all" data-color="Azul Trueno" onclick="selectColor(this)"></button>
-            </div>
-
-            <!-- Botón WhatsApp -->
-            <a id="m-wa-btn" href="#" target="_blank" class="w-full bg-[#25D366] text-white font-bold py-4 rounded-xl flex items-center justify-center gap-2 hover:bg-[#20b858] transition-colors shadow-lg shadow-[#25D366]/20">
-                <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                Pedir por WhatsApp
-            </a>
-
-        </div>
-    </div>
 
     <!-- Contenedor vacío donde el JavaScript pintará el footer -->
     <div id="footer-container"></div>
     
-    <!-- 1. CARGAMOS LA LIBRERÍA DE PRODUCTOS PRIMERO -->
     <script src="script/catalogo.js"></script>
-    
-    <!-- 2. LUEGO EL FOOTER -->
+    <script src="script/nosotros.js"></script> 
     <script src="script/footer.js"></script>
-
-    <!-- 3. AL FINAL, TU LÓGICA DE INICIO -->
-    <script src="script/index.js"></script>
+    <script src="script/index.js"></script>  
+</body>
 
 </body>
 

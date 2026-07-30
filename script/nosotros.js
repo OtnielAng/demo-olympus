@@ -33,7 +33,7 @@ function renderReviews() {
         // Generar los 5 rayos basados en la calificación
         let boltsHtml = '';
         for (let i = 1; i <= 5; i++) {
-            const statusClass = i <= review.rating ? 'rayo-activo' : 'rayo-inactivo';
+            const statusClass = i <= review.rating ? 'text-[#4F83CC] glow-azul' : 'text-gray-700';
             boltsHtml += `<span class="${statusClass}">${boltIcon}</span>`;
         }
 
