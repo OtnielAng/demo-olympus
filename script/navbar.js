@@ -21,14 +21,14 @@ const navbarHTML = `
     }
 
     #olympus-navbar a {
-    font-family: 'League Spartan', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-weight: 900; /* Peso máximo para que tengan mucha presencia */
-    font-stretch: condensed; /* Comprime las letras de los lados (si el navegador lo soporta) */
-    transform: scaleX(0.85); /* ¡Efecto de apretón! Las contrae horizontalmente al 85% */
+    /* font-stretch: condensed;  Comprime las letras de los lados (si el navegador lo soporta) */
+    transform: scaleX(0.9);¡Efecto de apretón! Las contrae horizontalmente al 85% */
     display: inline-block; /* Necesario para que el transform scaleX funcione bien en enlaces */
     text-decoration: none;
     color: #ffffff;
-    font-size: 1.2rem;
+    font-size: .6 rem;
     letter-spacing: 0.15rem;
     margin: 0 20px;
     text-transform: uppercase;
@@ -259,4 +259,27 @@ window.addEventListener('DOMContentLoaded', () => {
             }, 650); 
         });
     });
+});
+
+// script/config.js
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. Inyectar Meta Tags de Color
+    const themeColor = document.createElement('meta');
+    themeColor.name = "theme-color";
+    themeColor.content = "#0A0A0A";
+    document.head.appendChild(themeColor);
+
+    const appleBar = document.createElement('meta');
+    appleBar.name = "apple-mobile-web-app-status-bar-style";
+    appleBar.content = "black-translucent";
+    document.head.appendChild(appleBar);
+
+    // 2. Opcional: Asegurar el viewport
+    let viewport = document.querySelector('meta[name="viewport"]');
+    if (!viewport) {
+        viewport = document.createElement('meta');
+        viewport.name = "viewport";
+        document.head.appendChild(viewport);
+    }
+    viewport.content = "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no";
 });

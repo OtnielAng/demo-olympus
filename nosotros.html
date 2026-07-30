@@ -5,10 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Olympus Overs | Nosotros</title>
     
-    <!-- Fuentes de marca: League Spartan, Montserrat, Cinzel -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=League+Spartan:wght@500;600;700&family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Carga diferida inteligente de fuentes (Evita bloquear el render) -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=League+Spartan:wght@500;600;700;800;900&family=Montserrat:wght@400;500;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=League+Spartan:wght@500;600;700;800;900&family=Montserrat:wght@400;500;700&display=swap" media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=League+Spartan:wght@500;600;700;800;900&family=Montserrat:wght@400;500;700&display=swap">
+    </noscript>
     
     <!-- Tailwind CSS por CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -16,6 +21,18 @@
 
     <!-- Estilos Personalizados -->
     <link rel="stylesheet" href="script/style.css">
+    <link rel="stylesheet" href="script/animations.css">
+
+    <style>
+        .js-loading { opacity: 0; }
+    </style>
+    <script>
+        document.documentElement.classList.add('js-loading');
+        window.addEventListener('load', () => {
+            document.documentElement.classList.remove('js-loading');
+        });
+    </script>
+    
 </head>
 <body class="bg-olympus-black text-olympus-white font-sans antialiased overflow-x-hidden pt-8 pb-20">
 
@@ -27,11 +44,11 @@
         <!-- =========================
              1. SECCIÓN NOSOTROS
         ========================== -->
-        <section aria-labelledby="about-title" class="space-y-6 lg:mt-16 md:mt-12">        
+        <section aria-labelledby="about-title" class="js-reveal space-y-6 lg:mt-16 md:mt-12">        
             
             <!-- Contenedor Imagen 16:9 -->
-            <div class="w-full aspect-video rounded-3xl overflow-hidden border border-gray-800 shadow-[0_0_20px_rgba(201,168,76,0.05)] bg-olympus-card">
-                <img src="https://images.unsplash.com/photo-1555529771-835f59bfc50c?q=80&w=1200&auto=format&fit=crop" alt="Equipo Olympus Overs" class="w-full h-full object-cover">
+            <div class="hover-lift w-full aspect-video rounded-3xl overflow-hidden border border-gray-800 shadow-[0_0_20px_rgba(201,168,76,0.05)] bg-olympus-card">
+                <img src="https://images.unsplash.com/photo-1555529771-835f59bfc50c?q=80&w=1200&auto=format&fit=crop" alt="Equipo Olympus Overs" loading="lazy" class="w-full h-full object-cover">
             </div>
 
             <h1 id="products-title" class="font-display font-black uppercase text-olympus-white text-[45px] md:text-[85px] leading-[0.9] max-w-xl mb-6">NOSOTROS</h1>
@@ -50,7 +67,7 @@
         <!-- =========================
              2. SECCIÓN RESEÑAS
         ========================== -->
-        <section aria-labelledby="reviews-title">
+        <section aria-labelledby="reviews-title" class="js-reveal">
             <div class="text-center mb-8">
                 <p class="text-[10px] text-olympus-gold uppercase tracking-[0.2em] mb-1">Lo que dicen nuestros clientes</p>
                 <h2 id="reviews-title" class="font-display text-4xl tracking-wide text-olympus-white">RESEÑAS</h2>
@@ -65,7 +82,7 @@
         <!-- =========================
              3. PREGUNTAS FRECUENTES
         ========================== -->
-        <section aria-labelledby="faq-title" class="pt-6" id="faq">
+        <section aria-labelledby="faq-title" class="js-reveal pt-6" id="faq">
             <h2 id="faq-title" class="font-display text-4xl tracking-wide text-olympus-white mb-6 text-center">PREGUNTAS FRECUENTES</h2>
             
             <!-- Contenedor dinámico de FAQs -->
@@ -82,6 +99,8 @@
     
     <!-- Llama al archivo JS que acabas de crear -->
     <script src="script/footer.js" defer></script>
+    <script src="script/animations.js" defer></script>
+    <script src="script/config.js" defer></script>
 
 </body>
 </html>

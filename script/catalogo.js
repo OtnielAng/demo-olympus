@@ -233,7 +233,6 @@ const PRODUCTS = [
     `,
     colores: [ { name: 'Negro', hex: '#000000' } ]}
 
-
 ];
 
 // 2. VARIABLES GLOBALES
@@ -351,7 +350,7 @@ const modalHTML = `
             <p class="text-sm font-bold mb-3 uppercase tracking-widest text-gray-300">Color</p>
             <div class="flex gap-4 mb-8" id="color-selector"></div>
             
-            <a href="tallas.html" id="guia-tallas" href="nosotros.html#puntos-de-venta" class="text-olympus-dorado font-bold text-sm underline hover:opacity-80 transition-opacity mb-3 inline-block">
+            <a href="tallas.html" id="guia-tallas" class="text-olympus-dorado font-bold text-sm underline hover:opacity-80 transition-opacity mb-3 inline-block">
                 Guía de tallas
             </a>
             
@@ -504,6 +503,16 @@ function openModal(id) {
             const unicoBoton = colorContainer.querySelector('.color-btn');
             if (unicoBoton) selectColor(unicoBoton);
         }
+    }
+
+    // ====================================================
+    // NUEVO: ACTUALIZAR LINK DE GUÍA DE TALLAS DINÁMICO
+    // ====================================================
+    const linkTallas = document.getElementById('guia-tallas');
+    if (linkTallas && product.cat) {
+        // Convierte "Over Size" a "oversize", "BoxFit" a "boxfit", etc.
+        const catHash = product.cat.toLowerCase().replace(/\s+/g, '');
+        linkTallas.href = `tallas.html#tabla-${catHash}`;
     }
 
     updateWaLink();
