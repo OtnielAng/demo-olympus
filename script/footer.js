@@ -4,7 +4,7 @@ const footerHTML = `
         
         <!-- 1. LOGO Y SLOGAN -->
         <div class="col-span-2 md:col-span-1 flex flex-col items-center md:items-start text-center md:text-left">
-            <img src="img/Olympus-WHT.png" alt="Olympus Overs" class="w-48 mb-4">
+            <img src="img/Olympus-WHT.PNG" alt="Olympus Overs" class="w-48 mb-4">
             <p class="text-sm text-gray-400 italic">"Naciste para trascender."</p>
         </div>
 
