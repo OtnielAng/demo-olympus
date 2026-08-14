@@ -1,40 +1,38 @@
 const footerHTML = `
 <footer class="bg-olympus-black border-t border-gray-800 pt-16 pb-36 px-4 relative z-10 mt-16">
-    <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
+    <div class="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-x-4 gap-y-10">
         
         <!-- 1. LOGO Y SLOGAN -->
-        <div class="flex flex-col items-center md:items-start text-center md:text-left">
-            <span class="font-display text-4xl tracking-widest text-olympus-gold mb-2">OLYMPUS OVERS</span>
+        <div class="col-span-2 md:col-span-1 flex flex-col items-center md:items-start text-center md:text-left">
+            <img src="img/Olympus-WHT.png" alt="Olympus Overs" class="w-48 mb-4">
             <p class="text-sm text-gray-400 italic">"Naciste para trascender."</p>
         </div>
 
         <!-- 2. COMPRAR -->
-        <div class="flex flex-col items-center md:items-start text-center md:text-left">
-            <h4 class="font-display text-xl text-white tracking-widest mb-4 uppercase">Comprar</h4>
-            <!-- Al dar clic, mandan a index.html y le envían una "señal" en la URL (?filter=...) -->
+        <div class="col-span-1 flex flex-col items-center text-center pl-2 md:pl-0">
+            <h4 class="font-display text-lg md:text-xl text-white tracking-widest mb-4 uppercase">Comprar</h4>
             <ul class="space-y-3 text-sm text-gray-400">
-                <li><a href="catalogo.html?filter=Over Size" class="hover:text-olympus-gold transition-colors uppercase tracking-wider text-xs">Over Size</a></li>
-                <li><a href="catalogo.html?filter=BoxFit" class="hover:text-olympus-gold transition-colors uppercase tracking-wider text-xs">BoxFit</a></li>
-                <li><a href="catalogo.html?filter=Deslavada" class="hover:text-olympus-gold transition-colors uppercase tracking-wider text-xs">Deslavada</a></li>
-                <li><a href="catalogo.html?filter=Tank" class="hover:text-olympus-gold transition-colors uppercase tracking-wider text-xs">Tank</a></li>
-                <li><a href="catalogo.html?filter=Hoodie" class="hover:text-olympus-gold transition-colors uppercase tracking-wider text-xs">Hoodie</a></li>
-                <li><a href="catalogo.html?filter=Baggy" class="hover:text-olympus-gold transition-colors uppercase tracking-wider text-xs">Baggy</a></li>
+                <li><a href="catalogo.html?filter=Over Size" class="hover:text-olympus-gold transition-colors uppercase tracking-wider text-[10px] md:text-xs">Over Size</a></li>
+                <li><a href="catalogo.html?filter=BoxFit" class="hover:text-olympus-gold transition-colors uppercase tracking-wider text-[10px] md:text-xs">BoxFit</a></li>
+                <li><a href="catalogo.html?filter=Deslavada" class="hover:text-olympus-gold transition-colors uppercase tracking-wider text-[10px] md:text-xs">Deslavada</a></li>
+                <li><a href="catalogo.html?filter=Tank" class="hover:text-olympus-gold transition-colors uppercase tracking-wider text-[10px] md:text-xs">Tank</a></li>
+                <li><a href="catalogo.html?filter=Hoodie" class="hover:text-olympus-gold transition-colors uppercase tracking-wider text-[10px] md:text-xs">Hoodie</a></li>
+                <li><a href="catalogo.html?filter=Baggy" class="hover:text-olympus-gold transition-colors uppercase tracking-wider text-[10px] md:text-xs">Baggy</a></li>
             </ul>
         </div>
 
         <!-- 3. NOSOTROS -->
-        <div class="flex flex-col items-center md:items-start text-center md:text-left">
-            <h4 class="font-display text-xl text-white tracking-widest mb-4 uppercase">Nosotros</h4>
+        <div class="col-span-1 flex flex-col items-center text-center pl-2 md:pl-0">
+            <h4 class="font-display text-lg md:text-xl text-white tracking-widest mb-4 uppercase">Nosotros</h4>
             <ul class="space-y-3 text-sm text-gray-400">
-                <!-- Estas secciones viven en contacto.html y nosotros.html -->
-                <li><a href="contacto.html#sucursales" class="hover:text-olympus-gold transition-colors uppercase tracking-wider text-xs">Sucursales</a></li>
-                <li><a href="contacto.html#puntos-de-venta" class="hover:text-olympus-gold transition-colors uppercase tracking-wider text-xs">Puntos de Venta</a></li>
-                <li><a href="nosotros.html#faq" class="hover:text-olympus-gold transition-colors uppercase tracking-wider text-xs">Nuestra Historia & FAQs</a></li>
+                <li><a href="contacto.html#sucursales" class="hover:text-olympus-gold transition-colors uppercase tracking-wider text-[10px] md:text-xs">Sucursales</a></li>
+                <li><a href="contacto.html#puntos-de-venta" class="hover:text-olympus-gold transition-colors uppercase tracking-wider text-[10px] md:text-xs">Puntos de Venta</a></li>
+                <li><a href="nosotros.html#faq" class="hover:text-olympus-gold transition-colors uppercase tracking-wider text-[10px] md:text-xs">Historia & FAQs</a></li>
             </ul>
         </div>
 
         <!-- 4. REDES SOCIALES -->
-        <div class="flex flex-col items-center md:items-start text-center md:text-left">
+        <div class="col-span-2 md:col-span-1 flex flex-col items-center md:items-start text-center md:text-left mt-4 md:mt-0">
             <h4 class="font-display text-xl text-white tracking-widest mb-4 uppercase">Comunidad</h4>
             <a href="https://instagram.com/olympus.overs" target="_blank" class="text-sm text-olympus-gold font-bold mb-4 hover:text-white transition-colors">
                 @olympus.overs
@@ -69,24 +67,22 @@ document.getElementById('footer-container').innerHTML = footerHTML;
 // 6. LEER FILTROS DESDE LA URL (FOOTER)
 // ==========================================
 document.addEventListener('DOMContentLoaded', () => {
-    // Leemos los parámetros de la URL actual
     const params = new URLSearchParams(window.location.search);
     const filterFromURL = params.get('filter');
 
-    // Si existe una señal de filtro en la URL, la aplicamos
     if (filterFromURL) {
-        currentCat = filterFromURL;
+        if (typeof currentCat !== 'undefined') {
+            currentCat = filterFromURL;
+        }
         
-        // Actualizamos los botones visualmente para que se marque el correcto
         document.querySelectorAll('.cat-btn').forEach(b => {
-            const isActive = b.getAttribute('data-filter') === currentCat;
+            const isActive = b.getAttribute('data-filter') === filterFromURL;
             
             b.className = isActive 
                 ? "filter-btn cat-btn snap-start shrink-0 px-4 py-1.5 rounded-lg border border-olympus-blue/50 bg-olympus-blue/10 text-olympus-blue font-medium text-xs transition-colors" 
                 : "filter-btn cat-btn snap-start shrink-0 px-4 py-1.5 rounded-lg border border-gray-800 bg-olympus-card text-gray-400 hover:text-white text-xs transition-colors";
         });
 
-        // VALIDACIÓN DE SEGURIDAD: Solo ejecutar si la función existe en la página actual
         if (typeof renderGrid === 'function') {
             renderGrid();
         }

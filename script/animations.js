@@ -3,7 +3,14 @@
 // Ligero, sin librerías externas (no queremos volver a inflar la página).
 // ==========================================
 
-document.addEventListener('DOMContentLoaded', () => {
+// Usamos 'load' en vez de 'DOMContentLoaded': con el CDN de Tailwind, los
+// estilos reales (tamaños, posiciones) a veces terminan de inyectarse
+// DESPUÉS de que el DOM ya está listo. Si medimos antes de eso, el
+// observer cree que las secciones no están visibles todavía, y la
+// animación se queda "esperando" hasta que algo (como un scroll) fuerce
+// que el navegador vuelva a medir. Con 'load' nos aseguramos de medir
+// cuando todo (imágenes, hojas de estilo, CDN incluido) ya cargó.
+window.addEventListener('load', () => {
     const targets = document.querySelectorAll('.js-reveal');
 
     // Si el navegador no soporta IntersectionObserver (muy raro hoy en día),
@@ -26,6 +33,22 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     targets.forEach(el => observer.observe(el));
+
+    // Respaldo: por si el navegador aún no calculó bien el layout justo en
+    // este instante, revisamos "a mano" un momento después y mostramos
+    // cualquier sección que ya esté en pantalla (para que nunca se quede
+    // invisible esperando una interacción del usuario).
+    setTimeout(() => {
+        targets.forEach(el => {
+            if (el.classList.contains('is-visible')) return;
+            const rect = el.getBoundingClientRect();
+            const enPantalla = rect.top < window.innerHeight && rect.bottom > 0;
+            if (enPantalla) {
+                el.classList.add('is-visible');
+                observer.unobserve(el);
+            }
+        });
+    }, 300);
 });
 
 // ==========================================
