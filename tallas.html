@@ -5,35 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Olympus Overs | Guía de Tallas</title>
     
-    <!-- Fuentes de marca: League Spartan, Montserrat, Cinzel -->
+    <!-- =================================================================
+         1. FAVICON DINÁMICO (Soporte Modo Claro / Modo Oscuro)
+    ================================================================== -->
+    <link rel="icon" href="img/O-BLK-Zeuz.PNG" media="(prefers-color-scheme: light)">
+    <link rel="icon" href="img/O-WTH-Zeuz.PNG" media="(prefers-color-scheme: dark)">
+
+    <!-- =================================================================
+         2. FUENTES Y TIPOGRAFÍAS DE MARCA (Carga Diferida Inteligente)
+    ================================================================== -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <!-- Carga diferida inteligente de fuentes -->
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=League+Spartan:wght@500;600;700;800;900&family=Montserrat:wght@400;500;700&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=League+Spartan:wght@500;600;700;800;900&family=Montserrat:wght@400;500;700&display=swap" media="print" onload="this.media='all'">
     <noscript>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=League+Spartan:wght@500;600;700;800;900&family=Montserrat:wght@400;500;700&display=swap">
     </noscript>
     
-    <!-- Tailwind CSS Compilado -->
-    <link rel="stylesheet" href="script/tailwind-output.css">
+    <!-- =================================================================
+         3. ESTILOS BASE Y CONFIGURACIÓN TAILWIND CSS
+    ================================================================== -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="script/theme.js"></script>
 
     <!-- Estilos Personalizados -->
     <link rel="stylesheet" href="script/style.css">
 </head>
 <body class="bg-olympus-black text-olympus-white font-sans antialiased overflow-x-hidden pt-8 pb-20">
 
+    <!-- Navbar inyectado dinámicamente mediante script/navbar.js -->
     <div id="navbar-container"></div>
     <script src="script/navbar.js" defer></script>
 
     <main class="w-full max-w-md mx-auto md:max-w-3xl lg:max-w-5xl px-4 space-y-8 relative z-10 lg:mt-16 md:mt-12">
 
-        <!-- =========================
-             1. HEADER GUÍA DE TALLAS
-        ========================== -->
+        <!-- =================================================================
+             SECCIÓN 1: ENCABEZADO DE LA GUÍA DE TALLAS
+        ================================================================== -->
         <section aria-labelledby="tallas-title" class="text-center space-y-3">
-            <span class="font-special text-xs text-olympus-gold font-bold tracking-[0.2em] uppercase">Medidas Oficiales</span>
+            <span class="font-special text-xs text-olympus-gold font-bold tracking-[0.2em] uppercase">
+                Medidas Oficiales
+            </span>
             <h1 id="tallas-title" class="font-display font-black uppercase text-olympus-white text-[40px] md:text-[65px] leading-[0.9] tracking-wide">
                 Guía de Tallas
             </h1>
@@ -42,12 +54,12 @@
             </p>
         </section>
 
-        <!-- =========================
-             2. SELECTOR DE BOTONES (PESTAÑAS)
-        ========================== -->
+        <!-- =================================================================
+             SECCIÓN 2: SELECTOR INTERACTIVO DE PESTAÑAS (MÓDULO DE TABLAS)
+        ================================================================== -->
         <section class="bg-olympus-card border border-gray-800 rounded-3xl p-4 md:p-8 shadow-[0_0_25px_rgba(0,0,0,0.5)]">
             
-            <!-- Barra con Scroll Horizontal para Móvil -->
+            <!-- Barra Navegación por Pestañas (Scroll Horizontal en Móviles) -->
             <div class="flex overflow-x-auto hide-scroll border-b border-gray-800 pb-2 mb-8 gap-2 snap-x" id="tabs-container">
                 <button onclick="switchCategory('oversize')" id="tab-btn-oversize" class="tab-btn snap-start shrink-0 px-4 py-2 text-xs md:text-sm font-display font-bold uppercase tracking-wider border-b-2 border-olympus-gold text-olympus-gold transition-all duration-300">
                     Over Size
@@ -69,10 +81,11 @@
                 </button>
             </div>
 
-            <!-- ==========================================
-                 TABLA 1: OVER SIZE (ID: tabla-oversize)
-            =========================================== -->
+            <!-- -----------------------------------------------------------------
+                 TABLA 1: OVER SIZE (Visible por defecto)
+            ------------------------------------------------------------------ -->
             <div id="tabla-oversize" class="size-table-container space-y-8">
+                <!-- 1. Dimensiones en Plano -->
                 <div class="overflow-x-auto">
                     <h3 class="font-display text-lg text-olympus-gold uppercase mb-3 tracking-wider">1. Medidas de la prenda (Over Size)</h3>
                     <table class="w-full text-center border-collapse">
@@ -96,6 +109,7 @@
                     </table>
                 </div>
 
+                <!-- 2. Referencia por Estatura y Peso -->
                 <div class="overflow-x-auto pt-4 border-t border-gray-800/60">
                     <h3 class="font-display text-lg text-olympus-gold uppercase mb-3 tracking-wider">2. Referencia por Estatura y Peso</h3>
                     <table class="w-full text-center border-collapse">
@@ -118,9 +132,9 @@
                 </div>
             </div>
 
-            <!-- ==========================================
-                 TABLA 2: BOX FIT (ID: tabla-boxfit)
-            =========================================== -->
+            <!-- -----------------------------------------------------------------
+                 TABLA 2: BOX FIT
+            ------------------------------------------------------------------ -->
             <div id="tabla-boxfit" class="size-table-container hidden space-y-8">
                 <div class="overflow-x-auto">
                     <h3 class="font-display text-lg text-olympus-gold uppercase mb-3 tracking-wider">1. Medidas de la prenda (Box Fit)</h3>
@@ -167,9 +181,9 @@
                 </div>
             </div>
 
-            <!-- ==========================================
-                 TABLA 3: DESLAVADA (ID: tabla-deslavada)
-            =========================================== -->
+            <!-- -----------------------------------------------------------------
+                 TABLA 3: DESLAVADA
+            ------------------------------------------------------------------ -->
             <div id="tabla-deslavada" class="size-table-container hidden space-y-8">
                 <div class="overflow-x-auto">
                     <h3 class="font-display text-lg text-olympus-gold uppercase mb-3 tracking-wider">1. Medidas de la prenda (Deslavada)</h3>
@@ -216,9 +230,9 @@
                 </div>
             </div>
 
-            <!-- ==========================================
-                 TABLA 4: TANK BOXY (ID: tabla-tank)
-            =========================================== -->
+            <!-- -----------------------------------------------------------------
+                 TABLA 4: TANK BOXY
+            ------------------------------------------------------------------ -->
             <div id="tabla-tank" class="size-table-container hidden space-y-8">
                 <div class="overflow-x-auto">
                     <h3 class="font-display text-lg text-olympus-gold uppercase mb-3 tracking-wider">1. Medidas de la prenda (Tank Boxy)</h3>
@@ -261,9 +275,9 @@
                 </div>
             </div>
 
-            <!-- ==========================================
-                 TABLA 5: HOODIE (ID: tabla-hoodie)
-            =========================================== -->
+            <!-- -----------------------------------------------------------------
+                 TABLA 5: HOODIE
+            ------------------------------------------------------------------ -->
             <div id="tabla-hoodie" class="size-table-container hidden space-y-8">
                 <div class="overflow-x-auto">
                     <h3 class="font-display text-lg text-olympus-gold uppercase mb-3 tracking-wider">1. Medidas de la prenda (Hoodie)</h3>
@@ -306,9 +320,9 @@
                 </div>
             </div>
 
-            <!-- ==========================================
-                 TABLA 6: BAGGY PANTS (ID: tabla-baggy)
-            =========================================== -->
+            <!-- -----------------------------------------------------------------
+                 TABLA 6: BAGGY PANTS
+            ------------------------------------------------------------------ -->
             <div id="tabla-baggy" class="size-table-container hidden space-y-8">
                 <div class="overflow-x-auto">
                     <h3 class="font-display text-lg text-olympus-gold uppercase mb-3 tracking-wider">1. Medidas de la prenda (Baggy Pants)</h3>
@@ -355,7 +369,9 @@
                 </div>
             </div>
 
-            <!-- Recomendación de Medición -->
+            <!-- =================================================================
+                 MÓDULO INFORMATIVO: GUÍA DE MEDICIÓN PARA EL USUARIO
+            ================================================================== -->
             <div class="mt-8 pt-6 border-t border-gray-800/80 flex flex-col md:flex-row items-center gap-4 text-center md:text-left">
                 <div class="w-10 h-10 rounded-full bg-olympus-gold/10 border border-olympus-gold/30 flex items-center justify-center shrink-0">
                     <svg class="w-5 h-5 text-olympus-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -369,7 +385,7 @@
 
         </section>
 
-        <!-- Botón Volver al Catálogo -->
+        <!-- Botón de Retorno al Catálogo Principal -->
         <div class="text-center pt-4">
             <a href="catalogo.html" 
                 class="inline-block border border-olympus-white/30 text-olympus-white font-bold uppercase text-xs tracking-[0.1em] px-8 py-3 rounded-sm hover:bg-white/10 transition-all w-full md:w-auto">
@@ -379,14 +395,21 @@
 
     </main>
 
-    <!-- Contenedor del Footer -->
+    <!-- Footer inyectado dinámicamente mediante script/footer.js -->
     <div id="footer-container"></div>
     <script src="script/footer.js" defer></script>
 
-    <!-- LÓGICA DE NAVEGACIÓN ENTRE PESTAÑAS Y HASH DE URL -->
+    <!-- =================================================================
+         4. LÓGICA DE CONTROL DE PESTAÑAS Y NAVEGACIÓN VÍA HASH EN URL
+    ================================================================== -->
     <script>
+        // Arreglo centralizado de categorías
         const categories = ['oversize', 'boxfit', 'deslavada', 'tank', 'hoodie', 'baggy'];
 
+        /**
+         * Alterna la visibilidad de las tablas de medidas y actualiza el estilo de los botones.
+         * @param {string} selectedCategory - Categoría activa (ej: 'oversize', 'baggy')
+         */
         function switchCategory(selectedCategory) {
             categories.forEach(cat => {
                 const table = document.getElementById(`tabla-${cat}`);
@@ -402,7 +425,7 @@
             });
         }
 
-        // Si entran con un hash en la URL (ej: tallas.html#tabla-boxfit), abrimos esa pestaña en automático
+        // Detección automática del hash de URL para redirección directa desde el catálogo (ej: tallas.html#tabla-boxfit)
         document.addEventListener('DOMContentLoaded', () => {
             const hash = window.location.hash.replace('#tabla-', '');
             if (categories.includes(hash)) {
