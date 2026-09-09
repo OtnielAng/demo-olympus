@@ -2,8 +2,8 @@
   "devDependencies": {
     "tailwindcss": "^4.3.3"
   },
-  "scripts": {
-    "dev": "npx --yes tailwindcss@3 -i ./script/input.css -o ./script/tailwind-output.css --watch"
+  "scripts": { 
+    "dev": "npx --yes tailwindcss@3 -i ./script/input.css -o ./script/tailwind-output.css --watch", "build": "npx --yes tailwindcss@3 -i ./script/input.css -o ./script/tailwind-output.css --minify"
   },
   "name": "beta3",
   "version": "1.0.0",
