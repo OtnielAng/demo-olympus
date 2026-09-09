@@ -13,13 +13,8 @@ const PRODUCTS = [
         price: '$1,299 MXN', 
         tallas: ['XS','S', 'M', 'L', 'XL', 'XXL' , 'XXXL'], 
         img: [
-<<<<<<< HEAD
             'img/OverZeus/over-zeus-back.webp',
             'img/OverZeus/over-zeus-front.webp',
-=======
-            'img/OverZeus/over-zeus-back.PNG',
-            'img/OverZeus/over-zeus-front.PNG',
->>>>>>> 3647f495704f55239116589e48a24ce898abc300
         ], 
         desc: `
             <p class="mb-3">Confeccionada en algodón/poliester de alto gramaje, es una prenda fresca que brinda un tacto muy suave y asegura una mayor durabilidad tanto de la prenda como del color.</p>
@@ -45,11 +40,7 @@ const PRODUCTS = [
         title: 'Básica Zeus - LIMITED EDITION', 
         tallas: ['XS','S', 'M', 'L', 'XL', 'XXL' , 'XXXL'], 
         price: '$899 MXN', 
-<<<<<<< HEAD
         img: [ 'img/OverZeus/over-zeus-LIMITED.webp' ], 
-=======
-        img: [ 'img/OverZeus/over-zeus-LIMITED.PNG' ], 
->>>>>>> 3647f495704f55239116589e48a24ce898abc300
         desc: `
             <p class="mb-3">Confeccionada en algodón/poliester de alto gramaje, es una prenda fresca que brinda un tacto muy suave y asegura una mayor durabilidad tanto de la prenda como del color.</p>
             <p class="mb-3">El estampado de alta calidad y los detalles de esta edición especial reflejan la esencia del Drop Zeus: fuerza, disciplina y grandeza.</p>
@@ -75,13 +66,8 @@ const PRODUCTS = [
         tallas: ['XS','S', 'M', 'L', 'XL', 'XXL'], 
         price: '$899 MXN', 
         img: [
-<<<<<<< HEAD
             'img/Boxfit/boxfit-zeus-back.webp',
             'img/Boxfit/boxfit-zeus-front.webp',
-=======
-            'img/Boxfit/boxfit-zeus-back.PNG',
-            'img/Boxfit/boxfit-zeus-front.PNG',
->>>>>>> 3647f495704f55239116589e48a24ce898abc300
         ], 
         desc: `
             <p class="mb-3">La Boxyfit está diseñada para quienes buscan una silueta moderna con mayor presencia en la parte superior del cuerpo. Su corte cuadrado y recto, combinado con un largo ligeramente más corto que una oversize tradicional, crea una apariencia más estructurada que resalta los hombros y aporta un fit limpio y contemporáneo.</p>
@@ -108,11 +94,7 @@ const PRODUCTS = [
         title: 'BoxFit Zeus- Básica', 
         tallas: ['XS','S', 'M', 'L', 'XL'], 
         price: '$899 MXN', 
-<<<<<<< HEAD
         img: [ 'img/Boxfit/boxfit-zeus-basic.webp' ], 
-=======
-        img: [ 'img/Boxfit/boxfit-zeus-basic.PNG' ], 
->>>>>>> 3647f495704f55239116589e48a24ce898abc300
         desc: `
             <p class="mb-3">La Boxyfit está diseñada para quienes buscan una silueta moderna con mayor presencia en la parte superior del cuerpo. Su corte cuadrado y recto, combinado con un largo ligeramente más corto que una oversize tradicional, crea una apariencia más estructurada que resalta los hombros y aporta un fit limpio y contemporáneo.</p>
             <p class="mb-3">Confeccionada en algodón premium de 210 g/m², ofrece una caída firme, excelente comodidad y la resistencia necesaria para el uso diario. Es una prenda versátil que mantiene su forma y eleva cualquier outfit, dentro o fuera del gimnasio.</p>
@@ -139,13 +121,8 @@ const PRODUCTS = [
         tallas: ['M', 'L'], 
         price: '$899 MXN', 
         img: [
-<<<<<<< HEAD
             'img/Deslavada/over-deslavada-back.webp',
             'img/Deslavada/over-deslavada-front.webp',
-=======
-            'img/Deslavada/over-deslavada-back.PNG',
-            'img/Deslavada/over-deslavada-front.PNG',
->>>>>>> 3647f495704f55239116589e48a24ce898abc300
         ], 
         desc: `
             <p class="mb-3">La Over Deslavada combina un estilo urbano con la comodidad de una silueta oversized diseñada para el uso diario. </p>
@@ -176,11 +153,7 @@ const PRODUCTS = [
         title: 'Deslavada Zeus - Básica', 
         tallas: ['M', 'L'], 
         price: '$899 MXN', 
-<<<<<<< HEAD
         img: [ 'img/Deslavada/over-deslavada-basic.webp' ], 
-=======
-        img: [ 'img/Deslavada/over-deslavada-basic.PNG' ], 
->>>>>>> 3647f495704f55239116589e48a24ce898abc300
         desc: `
             <p class="mb-3">La Over Deslavada combina un estilo urbano con la comodidad de una silueta oversized diseñada para el uso diario. </p>
             <p class="mb-3">Confeccionada en 100% algodón premium de 320 g/m², ofrece una caída pesada, una textura suave y una resistencia superior que mejora con el paso del tiempo.</p>
@@ -211,13 +184,8 @@ const PRODUCTS = [
         tallas: ['S', 'M', 'L', 'XL'], 
         price: '$899 MXN', 
         img: [
-<<<<<<< HEAD
             'img/TankBoxy/tankboxy-zeus-back.webp',       
             'img/TankBoxy/tankboxy-zeus-front.webp'        
-=======
-            'img/TankBoxy/tankboxy-zeus-back.PNG',       
-            'img/TankBoxy/tankboxy-zeus-front.PNG'        
->>>>>>> 3647f495704f55239116589e48a24ce898abc300
         ], 
         desc: `
             <p class="mb-3">La Tank está diseñada para ofrecer la máxima comodidad. Su corte recto con una silueta ligeramente boxy proporciona una caída relajada que favorece la movilidad y resalta la parte superior del cuerpo.</p>
@@ -244,11 +212,7 @@ const PRODUCTS = [
         title: 'Tank Zeus - Básica', 
         tallas: ['XS','S', 'M', 'L', 'XL'], 
         price: '$899 MXN', 
-<<<<<<< HEAD
         img: [ 'img/TankBoxy/tankboxy-zeus-basic.webp' ], 
-=======
-        img: [ 'img/TankBoxy/tankboxy-zeus-basic.PNG' ], 
->>>>>>> 3647f495704f55239116589e48a24ce898abc300
         desc: `
             <p class="mb-3">La Tank está diseñada para ofrecer la máxima comodidad. Su corte recto con una silueta ligeramente boxy proporciona una caída relajada que favorece la movilidad y resalta la parte superior del cuerpo.</p>
             <p class="mb-3">Confeccionada en una mezcla premium de algodón y poliéster de 210 g/m², combina la suavidad natural del algodón con la resistencia y durabilidad del poliéster, ofreciendo una prenda ligera, fresca y cómoda para acompañarte tanto en tus entrenamientos como en el uso diario.</p>
@@ -275,13 +239,8 @@ const PRODUCTS = [
         tallas: ['S', 'M', 'L', 'XL', 'XXL'], 
         price: '$899 MXN', 
         img: [
-<<<<<<< HEAD
             'img/Hoodie/hoodie-zeus-back.webp',
             'img/Hoodie/hoodie-zeus-front.webp'            
-=======
-            'img/Hoodie/hoodie-zeus-back.PNG',
-            'img/Hoodie/hoodie-zeus-front.PNG'            
->>>>>>> 3647f495704f55239116589e48a24ce898abc300
         ], 
         desc: `
             <p class="mb-3">La hoodie ofrece la máxima comodidad con un corte oversized, combina un ajuste relajado con una apariencia limpia y moderna que se adapta tanto al entrenamiento como al uso diario.</p>
@@ -308,11 +267,7 @@ const PRODUCTS = [
         title: 'Baggy Básico', 
         tallas: ['S', 'M', 'L', 'XL'], 
         price: '$899 MXN', 
-<<<<<<< HEAD
         img: [ 'img/Baggy/baggy-basic.webp' ], 
-=======
-        img: [ 'img/Baggy/baggy-basic.PNG' ], 
->>>>>>> 3647f495704f55239116589e48a24ce898abc300
         desc: `
             <p class="mb-3">Pants Olympus Overs está confeccionado en French Terry premium, una mezcla de algodón y elastano que ofrece una excelente elasticidad, suavidad y transpirabilidad para acompañarte tanto en tus entrenamientos como en el día a día. Su corte baggy brinda un estilo urbano con máxima comodidad, mientras que la cintura con resorte y cordón ajustable proporciona un ajuste seguro.</p>
             <p class="mb-3">Además, incorpora un sistema de ajuste en la parte inferior de las piernas, permitiéndote modificar el largo y el fit según tu estatura o el estilo que prefieras.</p>
@@ -337,11 +292,7 @@ const PRODUCTS = [
         title: 'Baggy Zeus', 
         tallas: ['S', 'M', 'L', 'XL'], 
         price: '$899 MXN', 
-<<<<<<< HEAD
         img: [ 'img/Baggy/baggy-zeus.webp' ], 
-=======
-        img: [ 'img/Baggy/baggy-zeus.PNG' ], 
->>>>>>> 3647f495704f55239116589e48a24ce898abc300
         desc: `
             <p class="mb-3">Pants Olympus Overs está confeccionado en French Terry premium, una mezcla de algodón y elastano que ofrece una excelente elasticidad, suavidad y transpirabilidad para acompañarte tanto en tus entrenamientos como en el día a día. Su corte baggy brinda un estilo urbano con máxima comodidad, mientras que la cintura con resorte y cordón ajustable proporciona un ajuste seguro.</p>
             <p class="mb-3">Además, incorpora un sistema de ajuste en la parte inferior de las piernas, permitiéndote modificar el largo y el fit según tu estatura o el estilo que prefieras.</p>

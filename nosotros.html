@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -11,133 +10,6 @@
     ================================================================== -->
     <link rel="icon" href="img/O-BLK-Zeuz.webp" media="(prefers-color-scheme: light)">
     <link rel="icon" href="img/O-WTH-Zeuz.webp" media="(prefers-color-scheme: dark)">
-
-    <!-- =================================================================
-         2. FUENTES Y TIPOGRAFÍAS DE MARCA (Carga Diferida Inteligente)
-    ================================================================== -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=League+Spartan:wght@500;600;700;800;900&family=Montserrat:wght@400;500;700&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=League+Spartan:wght@500;600;700;800;900&family=Montserrat:wght@400;500;700&display=swap" media="print" onload="this.media='all'">
-    <noscript>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=League+Spartan:wght@500;600;700;800;900&family=Montserrat:wght@400;500;700&display=swap">
-    </noscript>
-    
-    <!-- =================================================================
-         3. ESTILOS BASE Y CONFIGURACIÓN TAILWIND CSS
-    ================================================================== -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="script/theme.js"></script>
-
-    <!-- Estilos Personalizados y Animaciones CSS -->
-    <link rel="stylesheet" href="script/style.css">
-    <link rel="stylesheet" href="script/animations.css">
-
-    <!-- Pre-carga de la imagen header para velocidad de renderizado -->
-    <link rel="preload" as="image" href="img/Pestañas/NosotrosHeader.webp" fetchpriority="high">
-
-    <!-- Script anti-flicker durante la carga dinámica -->
-    <style>
-        .js-loading { opacity: 0; }
-    </style>
-    <script>
-        document.documentElement.classList.add('js-loading');
-        window.addEventListener('load', () => {
-            document.documentElement.classList.remove('js-loading');
-        });
-    </script>
-</head>
-<body class="bg-olympus-black text-olympus-white font-sans antialiased overflow-x-hidden pt-8 pb-20">
-
-    <!-- Navbar inyectado dinámicamente mediante script/navbar.js -->
-    <div id="navbar-container"></div>
-    <script src="script/navbar.js" defer></script>
-
-    <main class="w-full max-w-md mx-auto md:max-w-3xl lg:max-w-5xl px-4 space-y-12 relative z-10">
-
-        <!-- =================================================================
-             SECCIÓN 1: HISTORIA Y MANIFIESTO DE MARCA ("NOSOTROS")
-        ================================================================== -->
-        <section aria-labelledby="about-title" class="js-reveal space-y-6 lg:mt-16 md:mt-12">        
-            
-            <!-- Banner Visual Aspect Ratio 16:9 con efecto Hover -->
-            <div class="hover-lift w-full aspect-video rounded-3xl overflow-hidden border border-gray-800 shadow-[0_0_20px_rgba(201,168,76,0.05)] bg-olympus-card">
-                <img src="img/Pestañas/NosotrosHeader.webp" alt="Equipo y Colección Olympus Overs" fetchpriority="high" class="w-full h-full object-cover">
-            </div>
-
-            <h1 id="about-title" class="font-display font-black uppercase text-olympus-white text-[45px] md:text-[85px] leading-[0.9] max-w-xl mb-6">
-                NOSOTROS
-            </h1>
-
-            <!-- Descripción narrativa de la marca -->
-            <div class="space-y-4 text-gray-300 text-sm leading-relaxed">
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                </p>
-                <p>
-                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-                </p>
-            </div>
-        </section>
-
-        <!-- =================================================================
-             SECCIÓN 2: RESEÑAS Y TESTIMONIALES (Renderizado Dinámico JS)
-             * Nota: El ID "reviews-title" sirve de ancla para la navegación 
-               directa desde el botón "Ver más reseñas" de la página de Inicio.
-        ================================================================== -->
-        <section aria-labelledby="reviews-title" class="js-reveal">
-            <div class="text-center mb-8">
-                <p class="text-[10px] text-olympus-gold uppercase tracking-[0.2em] mb-1">Lo que dicen nuestros clientes</p>
-                <h2 id="reviews-title" class="font-display text-4xl tracking-wide text-olympus-white">RESEÑAS</h2>
-            </div>
-
-            <!-- Contenedor dinámico: script/nosotros.js inyectará las tarjetas de reseñas completas aquí -->
-            <div id="reviews-container" class="space-y-4">
-                <!-- JS renderizará el listado completo de reseñas -->
-            </div>
-        </section>
-
-        <!-- =================================================================
-             SECCIÓN 3: PREGUNTAS FRECUENTES / FAQ (Sistema de Acordeón)
-        ================================================================== -->
-        <section aria-labelledby="faq-title" class="js-reveal pt-6" id="faq">
-            <h2 id="faq-title" class="font-display text-4xl tracking-wide text-olympus-white mb-6 text-center">
-                PREGUNTAS FRECUENTES
-            </h2>
-            
-            <!-- Contenedor dinámico: script/nosotros.js inyectará los acordeones interactivos aquí -->
-            <div id="faq-container" class="border-t border-gray-800">
-                <!-- JS renderizará los acordeones desplegables -->
-            </div>
-        </section>
-
-    </main>
-
-    <!-- Footer inyectado dinámicamente mediante script/footer.js -->
-    <div id="footer-container"></div>
-    
-    <!-- =================================================================
-         4. CARGA DE SCRIPTS Y LÓGICA DE NEGOCIO (Defer)
-    ================================================================== -->
-    <script src="script/nosotros.js" defer></script>
-    <script src="script/footer.js" defer></script>
-    <script src="script/animations.js" defer></script>
-    <script src="script/config.js" defer></script>
-
-</body>
-=======
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Olympus Overs | Nosotros</title>
-    
-    <!-- =================================================================
-         1. FAVICON DINÁMICO (Soporte Modo Claro / Modo Oscuro)
-    ================================================================== -->
-    <link rel="icon" href="img/O-BLK-Zeuz.PNG" media="(prefers-color-scheme: light)">
-    <link rel="icon" href="img/O-WTH-Zeuz.PNG" media="(prefers-color-scheme: dark)">
 
     <!-- =================================================================
          2. FUENTES Y TIPOGRAFÍAS DE MARCA (Carga Diferida Inteligente)
@@ -252,5 +124,4 @@
     <script src="script/config.js" defer></script>
 
 </body>
->>>>>>> 3647f495704f55239116589e48a24ce898abc300
 </html>
