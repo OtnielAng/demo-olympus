@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olympus Overs | Inicio</title>
+
+    <!-- FAVICON DINÁMICO (Soporte Modo Claro / Modo Oscuro) -->
+    <link rel="icon" href="img/O-BLK-Zeuz.webp" media="(prefers-color-scheme: light)">
+    <link rel="icon" href="img/O-WTH-Zeuz.webp" media="(prefers-color-scheme: dark)">
+
+    <!-- FUENTES Y TIPOGRAFÍAS DE MARCA -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=League+Spartan:wght@500;600;700;800;900&family=Montserrat:wght@400;500;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=League+Spartan:wght@500;600;700;800;900&family=Montserrat:wght@400;500;700&display=swap" media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=League+Spartan:wght@500;600;700;800;900&family=Montserrat:wght@400;500;700&display=swap">
+    </noscript>
+
+    <!-- TAILWIND CSS CDN + CONFIGURACIÓN DE TEMA (theme.js) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="script/theme.js"></script>
+
+    <!-- ESTILOS PERSONALIZADOS Y ANIMACIONES -->
+    <link rel="stylesheet" href="script/style.css">
+    <link rel="stylesheet" href="script/animations.css">
+
+    <!-- PRE-CARGA DE IMAGEN PRINCIPAL (Mejora LCP) -->
+    <link rel="preload" as="image" href="img/Pestañas/header.webp" fetchpriority="high">
+
+    <!-- PREVENCIÓN DE PARPADEO EN CARGA -->
+    <style>
+        .js-loading { opacity: 0; }
+    </style>
+    <script>
+        document.documentElement.classList.add('js-loading');
+        window.addEventListener('load', () => {
+            document.documentElement.classList.remove('js-loading');
+        });
+    </script>
+</head>
+
+<body class="bg-olympus-black text-olympus-white font-sans antialiased overflow-x-hidden">
+
+    <!-- Navbar inyectado dinámicamente -->
+    <div id="navbar-container"></div>
+    <script src="script/navbar.js" defer></script>
+
+    <main class="w-full max-w-md mx-auto md:max-w-3xl lg:max-w-5xl px-5 py-10 space-y-20 md:space-y-28">
+
+        <!-- LOGOTIPO HEADER -->
+        <img src="img/Olympus-WHT.webp" alt="Logo Olympus Overs" class="w-40 mx-auto mt-0 md:mt-8 -mb-12 md:-mb-20 block relative z-20">
+
+        <!-- =================================================================
+             1. HERO HEADER (Promoción Principal Drop Zeus)
+        ================================================================== -->
+        <section aria-label="Inicio" class="relative w-full h-[600px] md:h-[800px] flex items-end pb-16 overflow-hidden lg:mt-16 md:mt-12">
+
+            <!-- Fondo Visual -->
+            <img src="img/Pestañas/header.webp" alt="Fondo Colección Zeus" fetchpriority="high" class="absolute inset-0 w-full h-full object-cover z-0">
+
+            <!-- Degradados de contraste -->
+            <div class="absolute inset-0 bg-gradient-to-t from-olympus-negro via-olympus-negro/40 to-transparent z-0"></div>
+            <div class="absolute inset-y-0 left-0 w-24 md:w-64 bg-gradient-to-r from-olympus-negro to-transparent z-0 pointer-events-none"></div>
+            <div class="absolute inset-y-0 right-0 w-24 md:w-64 bg-gradient-to-l from-olympus-negro to-transparent z-0 pointer-events-none"></div>
+
+            <!-- Contenido Tipográfico y Call to Action -->
+            <div class="relative z-10 w-full max-w-5xl mx-auto px-6 md:px-10 flex flex-col items-start justify-end">
+                <span class="hero-anim hero-anim-1 font-special text-sm font-bold tracking-[0.2em] uppercase mb-6 glow-azul">
+                    NACISTE PARA TRASCENDER
+                </span>
+
+                <h1 class="hero-anim hero-anim-2 font-display font-black uppercase text-olympus-white text-[45px] md:text-[85px] leading-[0.9] max-w-xl mb-3">
+                    Nuevo Drop Zeus
+                </h1>
+                
+                <span class="hero-anim hero-anim-3 font-special text-sm font-bold tracking-[1em] uppercase mb-6 glow-azul zeus-pulse">
+                    NUEVO DROP
+                </span>
+
+                <p class="hero-anim hero-anim-4 font-sans text-olympus-gris text-sm md:text-base max-w-xs mb-8">
+                    Más que ropa. Una mentalidad. Diseñada para quienes construyen su legado.
+                </p>
+
+                <div class="hero-anim hero-anim-5 flex gap-4">
+                    <a href="catalogo.html" class="btn-anim bg-olympus-dorado text-olympus-negro font-bold uppercase text-xs tracking-[0.1em] px-8 py-3 rounded-sm hover:opacity-90 transition-opacity">
+                        Ver colección
+                    </a>
+                    <a href="nosotros.html" class="btn-anim border border-olympus-white/30 text-white font-bold uppercase text-xs tracking-[0.1em] px-8 py-3 rounded-sm hover:bg-white/10 transition-all">
+                        Conócenos
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- =================================================================
+             2. TARJETA HIGHLIGHT (NUEVA COLECCIÓN)
+        ================================================================== -->
+        <section aria-label="Nueva Colección" class="js-reveal">
+            <article class="hover-lift relative w-full h-[380px] rounded-3xl overflow-hidden card-border border-gray-800">
+                <img src="img/Pestañas/NuevaColeccion.webp" alt="Nueva Colección Olympus" loading="lazy" class="absolute inset-0 w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-t from-olympus-black via-olympus-black/60 to-transparent"></div>
+
+                <div class="absolute bottom-0 left-0 p-7 w-full">
+                    <span class="font-special text-olympus-dorado text-xs tracking-[0.2em] uppercase mb-2 block">
+                        Nueva Colección
+                    </span>
+                    <h3 class="font-display text-olympus-white font-bold uppercase tracking-wide text-3xl mb-3 glow-azul">
+                        Drop Zeus
+                    </h3>
+                    <p class="font-sans text-sm text-olympus-white/80 mb-5 line-clamp-2 max-w-sm">
+                        La fuerza de los dioses tejida en prendas pesadas de corte oversize.
+                    </p>
+                    <a href="catalogo.html" class="btn-anim inline-block bg-olympus-dorado text-olympus-negro font-bold uppercase text-xs tracking-[0.1em] px-8 py-3 rounded-sm hover:opacity-90 transition-opacity">
+                        Ver ahora
+                    </a>
+                </div>
+            </article>
+        </section>
+
+        <!-- =================================================================
+             3. COMPRA POR LOOKS ("Inspírate en los looks")
+        ================================================================== -->
+        <section aria-labelledby="looks-title">
+            <div class="mb-6 js-reveal">
+                <h3 id="looks-title" class="font-display text-olympus-white font-bold uppercase tracking-wide text-2xl">
+                    Inspírate en los looks
+                </h3>
+            </div>
+
+            <div class="flex md:grid md:grid-cols-3 overflow-x-auto md:overflow-visible hide-scroll snap-x snap-mandatory gap-4 md:gap-6 pb-2">
+                
+                <!-- Look 1 -->
+                <article class="js-reveal js-reveal-delay-1 hover-lift relative snap-center shrink-0 w-[75vw] md:w-full h-[320px] md:h-[400px] lg:h-[450px] rounded-2xl overflow-hidden bg-olympus-dark card-border flex flex-col justify-end">
+                    <img src="img/Pestañas/Look1.webp" loading="lazy" class="absolute inset-0 w-full h-full object-cover z-0" alt="Zeus Fit #1">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent z-0"></div>
+                    <div class="relative z-10 p-4 w-full">
+                        <p class="font-special text-sm font-bold text-olympus-dorado mb-3">Zeus Fit #1</p>
+                        <button onclick="openLook(1)" class="btn-anim w-full bg-olympus-white text-olympus-negro font-bold uppercase text-xs tracking-[0.1em] py-3 rounded-sm hover:opacity-90 transition-opacity">
+                            Comprar look
+                        </button>
+                    </div>
+                </article>
+
+                <!-- Look 2 -->
+                <article class="js-reveal js-reveal-delay-2 hover-lift relative snap-center shrink-0 w-[75vw] md:w-full h-[320px] md:h-[400px] lg:h-[450px] rounded-2xl overflow-hidden bg-olympus-dark card-border flex flex-col justify-end">
+                    <img src="img/Pestañas/Look1.webp" loading="lazy" class="absolute inset-0 w-full h-full object-cover z-0" alt="Zeus Fit #2">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent z-0"></div>
+                    <div class="relative z-10 p-4 w-full">
+                        <p class="font-special text-sm font-bold text-olympus-dorado mb-3">Zeus Fit #2</p>
+                        <button onclick="openLook(2)" class="btn-anim w-full bg-olympus-white text-olympus-negro font-bold uppercase text-xs tracking-[0.1em] py-3 rounded-sm hover:opacity-90 transition-opacity">
+                            Comprar look
+                        </button>
+                    </div>
+                </article>
+
+                <!-- Look 3 -->
+                <article class="js-reveal js-reveal-delay-3 hover-lift relative snap-center shrink-0 w-[75vw] md:w-full h-[320px] md:h-[400px] lg:h-[450px] rounded-2xl overflow-hidden bg-olympus-dark card-border flex flex-col justify-end">
+                    <img src="img/Pestañas/Look1.webp" loading="lazy" class="absolute inset-0 w-full h-full object-cover z-0" alt="Zeus Fit #3">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent z-0"></div>
+                    <div class="relative z-10 p-4 w-full">
+                        <p class="font-special text-sm font-bold text-olympus-dorado mb-3">Zeus Fit #3</p>
+                        <button onclick="openLook(3)" class="btn-anim w-full bg-olympus-white text-olympus-negro font-bold uppercase text-xs tracking-[0.1em] py-3 rounded-sm hover:opacity-90 transition-opacity">
+                            Comprar look
+                        </button>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- =================================================================
+             4. CATÁLOGO PREVIEW (4 productos dinámicos al azar)
+        ================================================================== -->
+        <section aria-labelledby="catalog-title" class="js-reveal">
+            <div class="mb-6">
+                <h3 id="catalog-title" class="font-display text-olympus-white font-bold uppercase tracking-wide text-2xl">
+                    Catálogo
+                </h3>
+            </div>
+
+            <!-- Inyección dinámica vía index.js -->
+            <div id="index-product-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 relative min-h-[300px] content-start"></div>
+
+            <div class="text-center pt-8">
+                <a href="catalogo.html" class="btn-anim inline-block bg-transparent border border-olympus-white/30 text-olympus-white font-bold uppercase text-xs tracking-[0.1em] px-8 py-3 rounded-sm hover:bg-white/10 transition-all w-full md:w-auto">
+                    Ver todo el catálogo
+                </a>
+            </div>
+        </section>
+
+        <!-- =================================================================
+             5. SECCIÓN MARCA ("NOSOTROS")
+        ================================================================== -->
+        <section aria-label="Nosotros" class="js-reveal">
+            <article class="bg-olympus-card border border-gray-800 rounded-3xl p-8 md:p-10 text-center flex flex-col items-center">
+                <span class="font-special text-olympus-dorado text-xs tracking-[0.2em] uppercase mb-4">Quiénes somos</span>
+                <h3 class="font-display text-olympus-white font-bold uppercase tracking-wide text-4xl mb-4">Nosotros</h3>
+                <p class="font-sans text-sm text-olympus-gris mb-8 leading-relaxed max-w-sm">
+                    Forjados para aquellos que no se conforman. Nuestra misión es entregar cortes perfectos y materiales que soporten tu estilo de vida.
+                </p>
+                <a href="nosotros.html">
+                    <button class="btn-anim bg-olympus-dorado text-olympus-negro font-bold uppercase text-xs tracking-[0.1em] px-8 py-3 rounded-sm hover:opacity-90 transition-opacity w-full md:w-auto">
+                        Ver más
+                    </button>
+                </a>
+            </article>
+        </section>
+
+        <!-- =================================================================
+             6. RESEÑAS DINÁMICAS (Inyección de 3 tarjetas + Botón)
+        ================================================================== -->
+        <section aria-labelledby="reviews-title" class="js-reveal">
+            <div class="mb-6">
+                <h3 id="reviews-title" class="font-display text-olympus-white font-bold uppercase tracking-wide text-2xl">Reseñas</h3>
+            </div>
+
+            <!-- Inyección dinámica vía index.js -->
+            <div id="reviews-container-index" class="flex overflow-x-auto hide-scroll snap-x snap-mandatory gap-4 pb-2"></div>
+        </section>
+
+        <!-- =================================================================
+             7. COMUNIDAD Y REDES SOCIALES
+        ================================================================== -->
+        <section aria-label="Redes Sociales" class="js-reveal">
+            <article class="bg-olympus-card border border-gray-800 rounded-3xl p-8 md:p-10 flex flex-col items-center text-center">
+                <span class="font-sans font-bold text-[10px] text-olympus-gris tracking-[0.2em] uppercase mb-3">Comunidad</span>
+                <h3 class="font-display text-olympus-white font-bold uppercase tracking-wide text-2xl mb-2">Síguenos en redes</h3>
+                <p class="font-special text-lg mb-8 tracking-wide font-bold glow-azul">@olympus.overs</p>
+
+                <div class="flex gap-6 justify-center">
+                    <!-- Facebook -->
+                    <a href="https://facebook.com/olympus.overs" target="_blank" aria-label="Facebook" class="btn-anim text-olympus-gris hover:text-olympus-white transition-colors">
+                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" />
+                        </svg>
+                    </a>
+                    <!-- Instagram -->
+                    <a href="https://instagram.com/olympus.overs" target="_blank" aria-label="Instagram" class="btn-anim text-olympus-gris hover:text-olympus-white transition-colors">
+                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+                        </svg>
+                    </a>
+                    <!-- TikTok -->
+                    <a href="https://tiktok.com/@olympus.overs" target="_blank" aria-label="TikTok" class="btn-anim text-olympus-gris hover:text-olympus-white transition-colors">
+                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 15.66a6.34 6.34 0 0010.86 4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z" />
+                        </svg>
+                    </a>
+                </div>
+            </article>
+        </section>
+
+    </main>
+
+    <!-- Footer inyectado dinámicamente -->
+    <div id="footer-container"></div>
+
+    <!-- SCRIPTS DE LÓGICA Y CONFIGURACIÓN -->
+    <script src="script/config.js" defer></script>
+    <script src="script/catalogo.js" defer></script>
+    <script src="script/nosotros.js" defer></script> 
+    <script src="script/footer.js" defer></script>
+    <script src="script/index.js" defer></script>
+    <script src="script/animations.js" defer></script>
+</body>
+</html>

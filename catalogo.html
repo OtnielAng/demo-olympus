@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olympus Overs | Catálogo</title>
+
+    <!-- Recursos Visuales y Tipografías -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=League+Spartan:wght@500;600;700;800;900&family=Montserrat:wght@400;500;700&display=swap">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=League+Spartan:wght@500;600;700;800;900&family=Montserrat:wght@400;500;700&display=swap"
+        media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=League+Spartan:wght@500;600;700;800;900&family=Montserrat:wght@400;500;700&display=swap">
+    </noscript>
+
+    <!-- Hojas de Estilo y Scripts Base -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="script/theme.js"></script>
+
+    <link rel="stylesheet" href="script/style.css">
+    <link rel="stylesheet" href="script/animations.css">
+
+    <!-- Transición suave de carga de página -->
+    <style>
+        .js-loading {
+            opacity: 0;
+        }
+    </style>
+    <script>
+        document.documentElement.classList.add('js-loading');
+        window.addEventListener('load', () => {
+            document.documentElement.classList.remove('js-loading');
+        });
+    </script>
+</head>
+
+<body class="bg-olympus-black text-olympus-white font-sans antialiased overflow-x-hidden pt-6">
+
+    <!-- MENÚ DE NAVEGACIÓN (Componente Dinámico) -->
+    <div id="navbar-container"></div>
+    <script src="script/navbar.js" defer></script>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="w-full max-w-md mx-auto md:max-w-3xl lg:max-w-5xl px-4 pb-12 space-y-8 relative z-10">
+
+        <!-- SECCIÓN: Video Promocional Destacado -->
+        <section aria-label="Video Promocional" class="js-reveal lg:mt-16 md:mt-12">
+            <div
+                class="hover-lift w-full aspect-video rounded-3xl overflow-hidden border border-gray-800 shadow-[0_0_15px_rgba(201,168,76,0.1)] relative bg-olympus-card">
+
+                <!-- Para reemplazar el video promocional, sustituir el archivo dentro de "img/Videos/" -->
+                <video class="absolute inset-0 w-full h-full object-cover" autoplay muted loop playsinline>  
+                    <source src="img/Videos/Vid-catalogo.mp4" type="video/mp4">
+                    Tu navegador no soporta la reproducción de video.
+                </video>
+
+            </div>
+        </section>
+
+        <!-- TÍTULO DE LA SECCIÓN -->
+        <h1 id="products-title"
+            class="js-reveal font-display font-black uppercase text-olympus-white text-[45px] md:text-[85px] leading-[0.9] max-w-xl mb-6">
+            Catálogo</h1>
+
+        <!-- SECCIÓN: Filtros de Búsqueda y Categorización -->
+        <section aria-label="Filtros de Catálogo" class="js-reveal space-y-4">
+
+            <!-- Filtros por Género -->
+            <div class="flex overflow-x-auto hide-scroll gap-3 pb-2 snap-x" id="filter-gender" data-scroll-hint>
+                <button data-filter="todo"
+                    class="btn-anim filter-btn gender-btn snap-start shrink-0 px-5 py-2 rounded-full border border-olympus-gold bg-olympus-gold text-olympus-black font-medium text-sm transition-colors">Todo</button>
+                <button data-filter="hombre"
+                    class="btn-anim filter-btn gender-btn snap-start shrink-0 px-5 py-2 rounded-full border border-gray-700 bg-olympus-card text-gray-300 hover:border-olympus-white text-sm transition-colors">Hombre</button>
+                <button data-filter="mujer"
+                    class="btn-anim filter-btn gender-btn snap-start shrink-0 px-5 py-2 rounded-full border border-gray-700 bg-olympus-card text-gray-300 hover:border-olympus-white text-sm transition-colors">Mujer</button>
+                <button data-filter="unisex"
+                    class="btn-anim filter-btn gender-btn snap-start shrink-0 px-5 py-2 rounded-full border border-gray-700 bg-olympus-card text-gray-300 hover:border-olympus-white text-sm transition-colors">Unisex</button>
+            </div>
+
+            <!-- Filtros por Categoría de Prenda -->
+            <div class="flex overflow-x-auto hide-scroll gap-3 pb-2 snap-x" id="filter-category" data-scroll-hint>
+                <button data-filter="todo"
+                    class="btn-anim filter-btn cat-btn snap-start shrink-0 px-4 py-1.5 rounded-lg border border-olympus-blue/50 bg-olympus-blue/10 text-olympus-blue font-medium text-xs transition-colors">Todo</button>
+                <button data-filter="Over Size"
+                    class="btn-anim filter-btn cat-btn snap-start shrink-0 px-4 py-1.5 rounded-lg border border-gray-800 bg-olympus-card text-gray-400 hover:text-white text-xs transition-colors">Over
+                    Size</button>
+                <button data-filter="BoxFit"
+                    class="btn-anim filter-btn cat-btn snap-start shrink-0 px-4 py-1.5 rounded-lg border border-gray-800 bg-olympus-card text-gray-400 hover:text-white text-xs transition-colors">BoxFit</button>
+                <button data-filter="Deslavada"
+                    class="btn-anim filter-btn cat-btn snap-start shrink-0 px-4 py-1.5 rounded-lg border border-gray-800 bg-olympus-card text-gray-400 hover:text-white text-xs transition-colors">Deslavada</button>
+                <button data-filter="Tank"
+                    class="btn-anim filter-btn cat-btn snap-start shrink-0 px-4 py-1.5 rounded-lg border border-gray-800 bg-olympus-card text-gray-400 hover:text-white text-xs transition-colors">Tank</button>
+                <button data-filter="Hoodie"
+                    class="btn-anim filter-btn cat-btn snap-start shrink-0 px-4 py-1.5 rounded-lg border border-gray-800 bg-olympus-card text-gray-400 hover:text-white text-xs transition-colors">Hoodie</button>
+                <button data-filter="Baggy"
+                    class="btn-anim filter-btn cat-btn snap-start shrink-0 px-4 py-1.5 rounded-lg border border-gray-800 bg-olympus-card text-gray-400 hover:text-white text-xs transition-colors">Baggy</button>
+            </div>
+        </section>
+
+        <!-- SECCIÓN: Catálogo de Productos -->
+        <section aria-labelledby="products-title" class="js-reveal">
+            <!-- Indicador dinámico de total de productos -->
+            <div class="flex items-left mb-6">
+                <span id="product-count" class="text-xs text-gray-500 font-medium">10 Artículos</span>
+            </div>
+
+            <!-- Contenedor del Grid Dinámico (Los productos se cargan automáticamente desde script/catalogo.js) -->
+            <div id="product-grid"
+                class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 relative min-h-[300px] content-start">
+            </div>
+
+            <!-- Mensaje de estado: Sin coincidencias de búsqueda -->
+            <div id="no-results" class="hidden text-center py-10 text-gray-500">
+                <p>No se encontraron productos con estos filtros.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- MÓDULOS DE SCRIPTS Y LÓGICA DE INTERFAZ -->
+    <script src="script/catalogo.js" defer></script>
+
+    <!-- PIE DE PÁGINA (Componente Dinámico) -->
+    <div id="footer-container"></div>
+    <script src="script/footer.js" defer></script>
+
+    <!-- Animaciones y Configuración General -->
+    <script src="script/animations.js" defer></script>
+    <script src="script/config.js" defer></script>
+
+</body>
+
+</html>
