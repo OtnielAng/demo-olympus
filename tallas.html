@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -434,4 +435,442 @@
         });
     </script>
 </body>
+=======
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olympus Overs | Guía de Tallas</title>
+    
+    <!-- =================================================================
+         1. FAVICON DINÁMICO (Soporte Modo Claro / Modo Oscuro)
+    ================================================================== -->
+    <link rel="icon" href="img/O-BLK-Zeuz.PNG" media="(prefers-color-scheme: light)">
+    <link rel="icon" href="img/O-WTH-Zeuz.PNG" media="(prefers-color-scheme: dark)">
+
+    <!-- =================================================================
+         2. FUENTES Y TIPOGRAFÍAS DE MARCA (Carga Diferida Inteligente)
+    ================================================================== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=League+Spartan:wght@500;600;700;800;900&family=Montserrat:wght@400;500;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=League+Spartan:wght@500;600;700;800;900&family=Montserrat:wght@400;500;700&display=swap" media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=League+Spartan:wght@500;600;700;800;900&family=Montserrat:wght@400;500;700&display=swap">
+    </noscript>
+    
+    <!-- =================================================================
+         3. ESTILOS BASE Y CONFIGURACIÓN TAILWIND CSS
+    ================================================================== -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="script/theme.js"></script>
+
+    <!-- Estilos Personalizados -->
+    <link rel="stylesheet" href="script/style.css">
+</head>
+<body class="bg-olympus-black text-olympus-white font-sans antialiased overflow-x-hidden pt-8 pb-20">
+
+    <!-- Navbar inyectado dinámicamente mediante script/navbar.js -->
+    <div id="navbar-container"></div>
+    <script src="script/navbar.js" defer></script>
+
+    <main class="w-full max-w-md mx-auto md:max-w-3xl lg:max-w-5xl px-4 space-y-8 relative z-10 lg:mt-16 md:mt-12">
+
+        <!-- =================================================================
+             SECCIÓN 1: ENCABEZADO DE LA GUÍA DE TALLAS
+        ================================================================== -->
+        <section aria-labelledby="tallas-title" class="text-center space-y-3">
+            <span class="font-special text-xs text-olympus-gold font-bold tracking-[0.2em] uppercase">
+                Medidas Oficiales
+            </span>
+            <h1 id="tallas-title" class="font-display font-black uppercase text-olympus-white text-[40px] md:text-[65px] leading-[0.9] tracking-wide">
+                Guía de Tallas
+            </h1>
+            <p class="font-sans text-xs md:text-sm text-olympus-gris max-w-md mx-auto leading-relaxed">
+                Nuestras prendas cuentan con cortes <span class="text-olympus-white font-bold">Oversized, BoxFit y Baggy</span>. Revisa las medidas del producto o guíate por estatura y peso.
+            </p>
+        </section>
+
+        <!-- =================================================================
+             SECCIÓN 2: SELECTOR INTERACTIVO DE PESTAÑAS (MÓDULO DE TABLAS)
+        ================================================================== -->
+        <section class="bg-olympus-card border border-gray-800 rounded-3xl p-4 md:p-8 shadow-[0_0_25px_rgba(0,0,0,0.5)]">
+            
+            <!-- Barra Navegación por Pestañas (Scroll Horizontal en Móviles) -->
+            <div class="flex overflow-x-auto hide-scroll border-b border-gray-800 pb-2 mb-8 gap-2 snap-x" id="tabs-container">
+                <button onclick="switchCategory('oversize')" id="tab-btn-oversize" class="tab-btn snap-start shrink-0 px-4 py-2 text-xs md:text-sm font-display font-bold uppercase tracking-wider border-b-2 border-olympus-gold text-olympus-gold transition-all duration-300">
+                    Over Size
+                </button>
+                <button onclick="switchCategory('boxfit')" id="tab-btn-boxfit" class="tab-btn snap-start shrink-0 px-4 py-2 text-xs md:text-sm font-display font-bold uppercase tracking-wider border-b-2 border-transparent text-gray-500 hover:text-olympus-white transition-all duration-300">
+                    Box Fit
+                </button>
+                <button onclick="switchCategory('deslavada')" id="tab-btn-deslavada" class="tab-btn snap-start shrink-0 px-4 py-2 text-xs md:text-sm font-display font-bold uppercase tracking-wider border-b-2 border-transparent text-gray-500 hover:text-olympus-white transition-all duration-300">
+                    Deslavada
+                </button>
+                <button onclick="switchCategory('tank')" id="tab-btn-tank" class="tab-btn snap-start shrink-0 px-4 py-2 text-xs md:text-sm font-display font-bold uppercase tracking-wider border-b-2 border-transparent text-gray-500 hover:text-olympus-white transition-all duration-300">
+                    Tank Boxy
+                </button>
+                <button onclick="switchCategory('hoodie')" id="tab-btn-hoodie" class="tab-btn snap-start shrink-0 px-4 py-2 text-xs md:text-sm font-display font-bold uppercase tracking-wider border-b-2 border-transparent text-gray-500 hover:text-olympus-white transition-all duration-300">
+                    Hoodie
+                </button>
+                <button onclick="switchCategory('baggy')" id="tab-btn-baggy" class="tab-btn snap-start shrink-0 px-4 py-2 text-xs md:text-sm font-display font-bold uppercase tracking-wider border-b-2 border-transparent text-gray-500 hover:text-olympus-white transition-all duration-300">
+                    Baggy Pants
+                </button>
+            </div>
+
+            <!-- -----------------------------------------------------------------
+                 TABLA 1: OVER SIZE (Visible por defecto)
+            ------------------------------------------------------------------ -->
+            <div id="tabla-oversize" class="size-table-container space-y-8">
+                <!-- 1. Dimensiones en Plano -->
+                <div class="overflow-x-auto">
+                    <h3 class="font-display text-lg text-olympus-gold uppercase mb-3 tracking-wider">1. Medidas de la prenda (Over Size)</h3>
+                    <table class="w-full text-center border-collapse">
+                        <thead>
+                            <tr class="text-olympus-gold font-special text-xs uppercase tracking-widest border-b border-gray-800">
+                                <th class="p-3 text-left pl-4">Talla</th>
+                                <th class="p-3">Ancho</th>
+                                <th class="p-3">Largo</th>
+                                <th class="p-3">Hombro</th>
+                                <th class="p-3">Manga</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-xs md:text-sm text-gray-300 divide-y divide-gray-800/60">
+                            <tr class="hover:bg-white/5 transition-colors"><td class="p-3 text-left pl-4 font-bold text-olympus-white">XS</td><td>56 cm</td><td>68 cm</td><td>48 cm</td><td>21 cm</td></tr>
+                            <tr class="hover:bg-white/5 transition-colors"><td class="p-3 text-left pl-4 font-bold text-olympus-white">S</td><td>58 cm</td><td>70 cm</td><td>50 cm</td><td>22 cm</td></tr>
+                            <tr class="hover:bg-white/5 transition-colors"><td class="p-3 text-left pl-4 font-bold text-olympus-white">M</td><td>60 cm</td><td>72 cm</td><td>52 cm</td><td>23 cm</td></tr>
+                            <tr class="hover:bg-white/5 transition-colors"><td class="p-3 text-left pl-4 font-bold text-olympus-white">L</td><td>63 cm</td><td>74 cm</td><td>55 cm</td><td>24 cm</td></tr>
+                            <tr class="hover:bg-white/5 transition-colors"><td class="p-3 text-left pl-4 font-bold text-olympus-white">XL</td><td>66 cm</td><td>76 cm</td><td>58 cm</td><td>25 cm</td></tr>
+                            <tr class="hover:bg-white/5 transition-colors"><td class="p-3 text-left pl-4 font-bold text-olympus-white">XXL</td><td>69 cm</td><td>78 cm</td><td>61 cm</td><td>26 cm</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- 2. Referencia por Estatura y Peso -->
+                <div class="overflow-x-auto pt-4 border-t border-gray-800/60">
+                    <h3 class="font-display text-lg text-olympus-gold uppercase mb-3 tracking-wider">2. Referencia por Estatura y Peso</h3>
+                    <table class="w-full text-center border-collapse">
+                        <thead>
+                            <tr class="text-olympus-gris font-special text-xs uppercase tracking-widest border-b border-gray-800">
+                                <th class="p-3 text-left pl-4">Talla</th>
+                                <th class="p-3">Estatura Recom.</th>
+                                <th class="p-3">Peso Recom.</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-xs md:text-sm text-gray-300 divide-y divide-gray-800/60">
+                            <tr class="hover:bg-white/5 transition-colors"><td class="p-3 text-left pl-4 font-bold text-olympus-white">XS</td><td>1.50 - 1.60 m</td><td>45 - 58 kg</td></tr>
+                            <tr class="hover:bg-white/5 transition-colors"><td class="p-3 text-left pl-4 font-bold text-olympus-white">S</td><td>1.58 - 1.68 m</td><td>55 - 68 kg</td></tr>
+                            <tr class="hover:bg-white/5 transition-colors"><td class="p-3 text-left pl-4 font-bold text-olympus-white">M</td><td>1.65 - 1.75 m</td><td>65 - 80 kg</td></tr>
+                            <tr class="hover:bg-white/5 transition-colors"><td class="p-3 text-left pl-4 font-bold text-olympus-white">L</td><td>1.72 - 1.82 m</td><td>78 - 92 kg</td></tr>
+                            <tr class="hover:bg-white/5 transition-colors"><td class="p-3 text-left pl-4 font-bold text-olympus-white">XL</td><td>1.78 - 1.90 m</td><td>90 - 110 kg</td></tr>
+                            <tr class="hover:bg-white/5 transition-colors"><td class="p-3 text-left pl-4 font-bold text-olympus-white">XXL</td><td>1.85 - 2.00 m</td><td>108 - 130 kg</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- -----------------------------------------------------------------
+                 TABLA 2: BOX FIT
+            ------------------------------------------------------------------ -->
+            <div id="tabla-boxfit" class="size-table-container hidden space-y-8">
+                <div class="overflow-x-auto">
+                    <h3 class="font-display text-lg text-olympus-gold uppercase mb-3 tracking-wider">1. Medidas de la prenda (Box Fit)</h3>
+                    <table class="w-full text-center border-collapse">
+                        <thead>
+                            <tr class="text-olympus-gold font-special text-xs uppercase tracking-widest border-b border-gray-800">
+                                <th class="p-3 text-left pl-4">Talla</th>
+                                <th class="p-3">Ancho</th>
+                                <th class="p-3">Largo</th>
+                                <th class="p-3">Hombro</th>
+                                <th class="p-3">Manga</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-xs md:text-sm text-gray-300 divide-y divide-gray-800/60">
+                            <tr class="hover:bg-white/5 transition-colors"><td class="p-3 text-left pl-4 font-bold text-olympus-white">XS</td><td>56 cm</td><td>65 cm</td><td>53 cm</td><td>21 cm</td></tr>
+                            <tr class="hover:bg-white/5 transition-colors"><td class="p-3 text-left pl-4 font-bold text-olympus-white">S</td><td>58 cm</td><td>67 cm</td><td>55 cm</td><td>22 cm</td></tr>
+                            <tr class="hover:bg-white/5 transition-colors"><td class="p-3 text-left pl-4 font-bold text-olympus-white">M</td><td>60 cm</td><td>69 cm</td><td>57 cm</td><td>23 cm</td></tr>
+                            <tr class="hover:bg-white/5 transition-colors"><td class="p-3 text-left pl-4 font-bold text-olympus-white">L</td><td>63 cm</td><td>71 cm</td><td>59 cm</td><td>24 cm</td></tr>
+                            <tr class="hover:bg-white/5 transition-colors"><td class="p-3 text-left pl-4 font-bold text-olympus-white">XL</td><td>64 cm</td><td>73 cm</td><td>61 cm</td><td>25 cm</td></tr>
+                            <tr class="hover:bg-white/5 transition-colors"><td class="p-3 text-left pl-4 font-bold text-olympus-white">XXL</td><td>66 cm</td><td>75 cm</td><td>63 cm</td><td>26 cm</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="overflow-x-auto pt-4 border-t border-gray-800/60">
+                    <h3 class="font-display text-lg text-olympus-gold uppercase mb-3 tracking-wider">2. Referencia por Estatura y Peso</h3>
+                    <table class="w-full text-center border-collapse">
+                        <thead>
+                            <tr class="text-olympus-gris font-special text-xs uppercase tracking-widest border-b border-gray-800">
+                                <th class="p-3 text-left pl-4">Talla</th>
+                                <th class="p-3">Estatura Recom.</th>
+                                <th class="p-3">Peso Recom.</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-xs md:text-sm text-gray-300 divide-y divide-gray-800/60">
+                            <tr class="hover:bg-white/5 transition-colors"><td class="p-3 text-left pl-4 font-bold text-olympus-white">XS</td><td>1.50 - 1.58 m</td><td>45 - 52 kg</td></tr>
+                            <tr class="hover:bg-white/5 transition-colors"><td class="p-3 text-left pl-4 font-bold text-olympus-white">S</td><td>1.55 - 1.65 m</td><td>52 - 62 kg</td></tr>
+                            <tr class="hover:bg-white/5 transition-colors"><td class="p-3 text-left pl-4 font-bold text-olympus-white">M</td><td>1.62 - 1.72 m</td><td>62 - 72 kg</td></tr>
+                            <tr class="hover:bg-white/5 transition-colors"><td class="p-3 text-left pl-4 font-bold text-olympus-white">L</td><td>1.70 - 1.80 m</td><td>72 - 82 kg</td></tr>
+                            <tr class="hover:bg-white/5 transition-colors"><td class="p-3 text-left pl-4 font-bold text-olympus-white">XL</td><td>1.75 - 1.85 m</td><td>82 - 92 kg</td></tr>
+                            <tr class="hover:bg-white/5 transition-colors"><td class="p-3 text-left pl-4 font-bold text-olympus-white">XXL</td><td>1.80 - 1.90 m</td><td>92 - 105 kg</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- -----------------------------------------------------------------
+                 TABLA 3: DESLAVADA
+            ------------------------------------------------------------------ -->
+            <div id="tabla-deslavada" class="size-table-container hidden space-y-8">
+                <div class="overflow-x-auto">
+                    <h3 class="font-display text-lg text-olympus-gold uppercase mb-3 tracking-wider">1. Medidas de la prenda (Deslavada)</h3>
+                    <table class="w-full text-center border-collapse">
+                        <thead>
+                            <tr class="text-olympus-gold font-special text-xs uppercase tracking-widest border-b border-gray-800">
+                                <th class="p-3 text-left pl-4">Talla</th>
+                                <th class="p-3">Ancho</th>
+                                <th class="p-3">Largo</th>
+                                <th class="p-3">Hombro</th>
+                                <th class="p-3">Manga</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-xs md:text-sm text-gray-300 divide-y divide-gray-800/60">
+                            <tr class="hover:bg-white/5 transition-colors"><td class="p-3 text-left pl-4 font-bold text-olympus-white">XS</td><td>54 cm</td><td>72 cm</td><td>56 cm</td><td>18 cm</td></tr>
+                            <tr class="hover:bg-white/5 transition-colors"><td class="p-3 text-left pl-4 font-bold text-olympus-white">S</td><td>56 cm</td><td>74 cm</td><td>58 cm</td><td>18.5 cm</td></tr>
+                            <tr class="hover:bg-white/5 transition-colors"><td class="p-3 text-left pl-4 font-bold text-olympus-white">M</td><td>58 cm</td><td>76 cm</td><td>60 cm</td><td>19 cm</td></tr>
+                            <tr class="hover:bg-white/5 transition-colors"><td class="p-3 text-left pl-4 font-bold text-olympus-white">L</td><td>60 cm</td><td>78 cm</td><td>62 cm</td><td>19.5 cm</td></tr>
+                            <tr class="hover:bg-white/5 transition-colors"><td class="p-3 text-left pl-4 font-bold text-olympus-white">XL</td><td>62 cm</td><td>80 cm</td><td>64 cm</td><td>20 cm</td></tr>
+                            <tr class="hover:bg-white/5 transition-colors"><td class="p-3 text-left pl-4 font-bold text-olympus-white">XXL</td><td>64 cm</td><td>82 cm</td><td>64 cm</td><td>20.5 cm</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="overflow-x-auto pt-4 border-t border-gray-800/60">
+                    <h3 class="font-display text-lg text-olympus-gold uppercase mb-3 tracking-wider">2. Referencia por Estatura y Peso</h3>
+                    <table class="w-full text-center border-collapse">
+                        <thead>
+                            <tr class="text-olympus-gris font-special text-xs uppercase tracking-widest border-b border-gray-800">
+                                <th class="p-3 text-left pl-4">Talla</th>
+                                <th class="p-3">Estatura Recom.</th>
+                                <th class="p-3">Peso Recom.</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-xs md:text-sm text-gray-300 divide-y divide-gray-800/60">
+                            <tr class="hover:bg-white/5 transition-colors"><td class="p-3 text-left pl-4 font-bold text-olympus-white">XS</td><td>1.50 - 1.58 m</td><td>45 - 52 kg</td></tr>
+                            <tr class="hover:bg-white/5 transition-colors"><td class="p-3 text-left pl-4 font-bold text-olympus-white">S</td><td>1.55 - 1.65 m</td><td>52 - 62 kg</td></tr>
+                            <tr class="hover:bg-white/5 transition-colors"><td class="p-3 text-left pl-4 font-bold text-olympus-white">M</td><td>1.62 - 1.72 m</td><td>62 - 72 kg</td></tr>
+                            <tr class="hover:bg-white/5 transition-colors"><td class="p-3 text-left pl-4 font-bold text-olympus-white">L</td><td>1.70 - 1.80 m</td><td>72 - 82 kg</td></tr>
+                            <tr class="hover:bg-white/5 transition-colors"><td class="p-3 text-left pl-4 font-bold text-olympus-white">XL</td><td>1.75 - 1.85 m</td><td>82 - 92 kg</td></tr>
+                            <tr class="hover:bg-white/5 transition-colors"><td class="p-3 text-left pl-4 font-bold text-olympus-white">XXL</td><td>1.80 - 1.90 m</td><td>92 - 105 kg</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- -----------------------------------------------------------------
+                 TABLA 4: TANK BOXY
+            ------------------------------------------------------------------ -->
+            <div id="tabla-tank" class="size-table-container hidden space-y-8">
+                <div class="overflow-x-auto">
+                    <h3 class="font-display text-lg text-olympus-gold uppercase mb-3 tracking-wider">1. Medidas de la prenda (Tank Boxy)</h3>
+                    <table class="w-full text-center border-collapse">
+                        <thead>
+                            <tr class="text-olympus-gold font-special text-xs uppercase tracking-widest border-b border-gray-800">
+                                <th class="p-3 text-left pl-4">Talla</th>
+                                <th class="p-3">Ancho</th>
+                                <th class="p-3">Largo</th>
+                                <th class="p-3">Hombro</th>
+                                <th class="p-3">Manga</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-xs md:text-sm text-gray-300 divide-y divide-gray-800/60">
+                            <tr class="hover:bg-white/5 transition-colors"><td class="p-3 text-left pl-4 font-bold text-olympus-white">S</td><td>55 cm</td><td>64 cm</td><td>47 cm</td><td>27 cm</td></tr>
+                            <tr class="hover:bg-white/5 transition-colors"><td class="p-3 text-left pl-4 font-bold text-olympus-white">M</td><td>57 cm</td><td>66 cm</td><td>49 cm</td><td>28 cm</td></tr>
+                            <tr class="hover:bg-white/5 transition-colors"><td class="p-3 text-left pl-4 font-bold text-olympus-white">L</td><td>59 cm</td><td>68 cm</td><td>51 cm</td><td>29 cm</td></tr>
+                            <tr class="hover:bg-white/5 transition-colors"><td class="p-3 text-left pl-4 font-bold text-olympus-white">XL</td><td>61 cm</td><td>70 cm</td><td>53 cm</td><td>30 cm</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="overflow-x-auto pt-4 border-t border-gray-800/60">
+                    <h3 class="font-display text-lg text-olympus-gold uppercase mb-3 tracking-wider">2. Referencia por Estatura y Peso</h3>
+                    <table class="w-full text-center border-collapse">
+                        <thead>
+                            <tr class="text-olympus-gris font-special text-xs uppercase tracking-widest border-b border-gray-800">
+                                <th class="p-3 text-left pl-4">Talla</th>
+                                <th class="p-3">Estatura Recom.</th>
+                                <th class="p-3">Peso Recom.</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-xs md:text-sm text-gray-300 divide-y divide-gray-800/60">
+                            <tr class="hover:bg-white/5 transition-colors"><td class="p-3 text-left pl-4 font-bold text-olympus-white">S</td><td>1.55 - 1.65 m</td><td>52 - 62 kg</td></tr>
+                            <tr class="hover:bg-white/5 transition-colors"><td class="p-3 text-left pl-4 font-bold text-olympus-white">M</td><td>1.62 - 1.72 m</td><td>62 - 72 kg</td></tr>
+                            <tr class="hover:bg-white/5 transition-colors"><td class="p-3 text-left pl-4 font-bold text-olympus-white">L</td><td>1.70 - 1.80 m</td><td>72 - 82 kg</td></tr>
+                            <tr class="hover:bg-white/5 transition-colors"><td class="p-3 text-left pl-4 font-bold text-olympus-white">XL</td><td>1.75 - 1.88 m</td><td>82 - 95 kg</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- -----------------------------------------------------------------
+                 TABLA 5: HOODIE
+            ------------------------------------------------------------------ -->
+            <div id="tabla-hoodie" class="size-table-container hidden space-y-8">
+                <div class="overflow-x-auto">
+                    <h3 class="font-display text-lg text-olympus-gold uppercase mb-3 tracking-wider">1. Medidas de la prenda (Hoodie)</h3>
+                    <table class="w-full text-center border-collapse">
+                        <thead>
+                            <tr class="text-olympus-gold font-special text-xs uppercase tracking-widest border-b border-gray-800">
+                                <th class="p-3 text-left pl-4">Talla</th>
+                                <th class="p-3">Ancho</th>
+                                <th class="p-3">Largo</th>
+                                <th class="p-3">Hombro</th>
+                                <th class="p-3">Manga</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-xs md:text-sm text-gray-300 divide-y divide-gray-800/60">
+                            <tr class="hover:bg-white/5 transition-colors"><td class="p-3 text-left pl-4 font-bold text-olympus-white">S</td><td>55 cm</td><td>65 cm</td><td>63 cm</td><td>56 cm</td></tr>
+                            <tr class="hover:bg-white/5 transition-colors"><td class="p-3 text-left pl-4 font-bold text-olympus-white">M</td><td>57 cm</td><td>67 cm</td><td>65 cm</td><td>57 cm</td></tr>
+                            <tr class="hover:bg-white/5 transition-colors"><td class="p-3 text-left pl-4 font-bold text-olympus-white">L</td><td>59 cm</td><td>69 cm</td><td>67 cm</td><td>58 cm</td></tr>
+                            <tr class="hover:bg-white/5 transition-colors"><td class="p-3 text-left pl-4 font-bold text-olympus-white">XL</td><td>61 cm</td><td>71 cm</td><td>69 cm</td><td>59 cm</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="overflow-x-auto pt-4 border-t border-gray-800/60">
+                    <h3 class="font-display text-lg text-olympus-gold uppercase mb-3 tracking-wider">2. Referencia por Estatura y Peso</h3>
+                    <table class="w-full text-center border-collapse">
+                        <thead>
+                            <tr class="text-olympus-gris font-special text-xs uppercase tracking-widest border-b border-gray-800">
+                                <th class="p-3 text-left pl-4">Talla</th>
+                                <th class="p-3">Estatura Recom.</th>
+                                <th class="p-3">Peso Recom.</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-xs md:text-sm text-gray-300 divide-y divide-gray-800/60">
+                            <tr class="hover:bg-white/5 transition-colors"><td class="p-3 text-left pl-4 font-bold text-olympus-white">S</td><td>1.55 - 1.65 m</td><td>52 - 62 kg</td></tr>
+                            <tr class="hover:bg-white/5 transition-colors"><td class="p-3 text-left pl-4 font-bold text-olympus-white">M</td><td>1.62 - 1.72 m</td><td>62 - 72 kg</td></tr>
+                            <tr class="hover:bg-white/5 transition-colors"><td class="p-3 text-left pl-4 font-bold text-olympus-white">L</td><td>1.70 - 1.80 m</td><td>72 - 82 kg</td></tr>
+                            <tr class="hover:bg-white/5 transition-colors"><td class="p-3 text-left pl-4 font-bold text-olympus-white">XL</td><td>1.75 - 1.85 m</td><td>82 - 92 kg</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- -----------------------------------------------------------------
+                 TABLA 6: BAGGY PANTS
+            ------------------------------------------------------------------ -->
+            <div id="tabla-baggy" class="size-table-container hidden space-y-8">
+                <div class="overflow-x-auto">
+                    <h3 class="font-display text-lg text-olympus-gold uppercase mb-3 tracking-wider">1. Medidas de la prenda (Baggy Pants)</h3>
+                    <table class="w-full text-center border-collapse">
+                        <thead>
+                            <tr class="text-olympus-gold font-special text-xs uppercase tracking-widest border-b border-gray-800">
+                                <th class="p-3 text-left pl-4">Talla</th>
+                                <th class="p-3">Cintura *</th>
+                                <th class="p-3">Cadera</th>
+                                <th class="p-3">Tiro</th>
+                                <th class="p-3">Entrepierna</th>
+                                <th class="p-3">Bota (Largo)</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-xs md:text-sm text-gray-300 divide-y divide-gray-800/60">
+                            <tr class="hover:bg-white/5 transition-colors"><td class="p-3 text-left pl-4 font-bold text-olympus-white">XS</td><td>29 cm</td><td>65 cm</td><td>34 cm</td><td>32 cm</td><td>100 cm</td></tr>
+                            <tr class="hover:bg-white/5 transition-colors"><td class="p-3 text-left pl-4 font-bold text-olympus-white">S</td><td>31 cm</td><td>67 cm</td><td>35 cm</td><td>33 cm</td><td>102 cm</td></tr>
+                            <tr class="hover:bg-white/5 transition-colors"><td class="p-3 text-left pl-4 font-bold text-olympus-white">M</td><td>33 cm</td><td>69 cm</td><td>36 cm</td><td>34 cm</td><td>104 cm</td></tr>
+                            <tr class="hover:bg-white/5 transition-colors"><td class="p-3 text-left pl-4 font-bold text-olympus-white">L</td><td>35 cm</td><td>71 cm</td><td>37 cm</td><td>35 cm</td><td>106 cm</td></tr>
+                            <tr class="hover:bg-white/5 transition-colors"><td class="p-3 text-left pl-4 font-bold text-olympus-white">XL</td><td>37 cm</td><td>73 cm</td><td>38 cm</td><td>36 cm</td><td>108 cm</td></tr>
+                        </tbody>
+                    </table>
+                    <p class="text-[11px] italic text-olympus-gris mt-2 text-left pl-2">* Cintura medida de lado a lado y sin estirar.</p>
+                </div>
+
+                <div class="overflow-x-auto pt-4 border-t border-gray-800/60">
+                    <h3 class="font-display text-lg text-olympus-gold uppercase mb-3 tracking-wider">2. Referencia por Estatura y Peso</h3>
+                    <table class="w-full text-center border-collapse">
+                        <thead>
+                            <tr class="text-olympus-gris font-special text-xs uppercase tracking-widest border-b border-gray-800">
+                                <th class="p-3 text-left pl-4">Talla</th>
+                                <th class="p-3">Estatura Recom.</th>
+                                <th class="p-3">Peso Recom.</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-xs md:text-sm text-gray-300 divide-y divide-gray-800/60">
+                            <tr class="hover:bg-white/5 transition-colors"><td class="p-3 text-left pl-4 font-bold text-olympus-white">XS</td><td>1.50 - 1.60 m</td><td>45 - 55 kg</td></tr>
+                            <tr class="hover:bg-white/5 transition-colors"><td class="p-3 text-left pl-4 font-bold text-olympus-white">S</td><td>1.58 - 1.68 m</td><td>55 - 65 kg</td></tr>
+                            <tr class="hover:bg-white/5 transition-colors"><td class="p-3 text-left pl-4 font-bold text-olympus-white">M</td><td>1.65 - 1.75 m</td><td>65 - 78 kg</td></tr>
+                            <tr class="hover:bg-white/5 transition-colors"><td class="p-3 text-left pl-4 font-bold text-olympus-white">L</td><td>1.72 - 1.82 m</td><td>78 - 90 kg</td></tr>
+                            <tr class="hover:bg-white/5 transition-colors"><td class="p-3 text-left pl-4 font-bold text-olympus-white">XL</td><td>1.78 - 1.90 m</td><td>90 - 105 kg</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- =================================================================
+                 MÓDULO INFORMATIVO: GUÍA DE MEDICIÓN PARA EL USUARIO
+            ================================================================== -->
+            <div class="mt-8 pt-6 border-t border-gray-800/80 flex flex-col md:flex-row items-center gap-4 text-center md:text-left">
+                <div class="w-10 h-10 rounded-full bg-olympus-gold/10 border border-olympus-gold/30 flex items-center justify-center shrink-0">
+                    <svg class="w-5 h-5 text-olympus-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                </div>
+                <p class="text-xs text-olympus-gris leading-relaxed">
+                    <strong class="text-olympus-white">¿Cómo tomar tus medidas?</strong> Para prendas superiores, mide una playera propia de lado a lado sobre una superficie plana. Para pantalones, la cintura está tomada en plano y sin estirar el resorte.
+                </p>
+            </div>
+
+        </section>
+
+        <!-- Botón de Retorno al Catálogo Principal -->
+        <div class="text-center pt-4">
+            <a href="catalogo.html" 
+                class="inline-block border border-olympus-white/30 text-olympus-white font-bold uppercase text-xs tracking-[0.1em] px-8 py-3 rounded-sm hover:bg-white/10 transition-all w-full md:w-auto">
+                Volver al catálogo
+            </a>
+        </div>
+
+    </main>
+
+    <!-- Footer inyectado dinámicamente mediante script/footer.js -->
+    <div id="footer-container"></div>
+    <script src="script/footer.js" defer></script>
+
+    <!-- =================================================================
+         4. LÓGICA DE CONTROL DE PESTAÑAS Y NAVEGACIÓN VÍA HASH EN URL
+    ================================================================== -->
+    <script>
+        // Arreglo centralizado de categorías
+        const categories = ['oversize', 'boxfit', 'deslavada', 'tank', 'hoodie', 'baggy'];
+
+        /**
+         * Alterna la visibilidad de las tablas de medidas y actualiza el estilo de los botones.
+         * @param {string} selectedCategory - Categoría activa (ej: 'oversize', 'baggy')
+         */
+        function switchCategory(selectedCategory) {
+            categories.forEach(cat => {
+                const table = document.getElementById(`tabla-${cat}`);
+                const btn = document.getElementById(`tab-btn-${cat}`);
+                
+                if (cat === selectedCategory) {
+                    table.classList.remove('hidden');
+                    btn.className = "tab-btn snap-start shrink-0 px-4 py-2 text-xs md:text-sm font-display font-bold uppercase tracking-wider border-b-2 border-olympus-gold text-olympus-gold transition-all duration-300";
+                } else {
+                    table.classList.add('hidden');
+                    btn.className = "tab-btn snap-start shrink-0 px-4 py-2 text-xs md:text-sm font-display font-bold uppercase tracking-wider border-b-2 border-transparent text-gray-500 hover:text-olympus-white transition-all duration-300";
+                }
+            });
+        }
+
+        // Detección automática del hash de URL para redirección directa desde el catálogo (ej: tallas.html#tabla-boxfit)
+        document.addEventListener('DOMContentLoaded', () => {
+            const hash = window.location.hash.replace('#tabla-', '');
+            if (categories.includes(hash)) {
+                switchCategory(hash);
+            }
+        });
+    </script>
+</body>
+>>>>>>> 3647f495704f55239116589e48a24ce898abc300
 </html>
